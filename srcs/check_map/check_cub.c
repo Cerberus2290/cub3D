@@ -12,6 +12,8 @@
 
 #include "../../incl/cub3d.h"
 
+/*responsible for adding items to the game map
+ *also handles adding spawn points to t_map*/
 int	add_item(t_map *map, int x, int y)
 {
 	t_items		*item;
@@ -33,6 +35,7 @@ int	add_item(t_map *map, int x, int y)
 	return (0);
 }
 
+/*validates the map data to ensure map is closed*/
 int	checking(t_map *map, size_t *map_len)
 {
 	size_t	x;

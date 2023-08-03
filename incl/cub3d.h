@@ -20,8 +20,9 @@
 #  include "../mlx_linux/mlx.h"
 # endif
 # include <mlx.h>						//mlx - Library
-# include <math.h>					//collection of mathematical functions
-# include <stdio.h>					//printf, perror, strerror
+# include <math.h>						//collection of mathematical functions
+# include <stdio.h>						//printf, perror, strerror
+# include <fcntl.h>						//open
 # include <unistd.h>					//close
 # include <stdlib.h>					//malloc, free
 # include <time.h>
@@ -195,5 +196,6 @@ int			ft_free(void *s1, void *s2, void *s3, void *s4);
 t_list		*ft_lstnew(void *cont);
 t_doublell	*doublelst_new(void *cont);
 void		doublelst_addback(t_doublell **lst, t_doublell *new);
+void		init_struct(t_files *files, t_map *map);
 
 #endif

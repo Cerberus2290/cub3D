@@ -71,3 +71,22 @@ int	ft_free(void *s1, void *s2, void *s3, void *s4)
 		free(s4);
 	return (1);
 }
+
+void	init_struct(t_files *files, t_map *map)
+{
+	files->map_begin = 0;
+	files->tab_len = 0;
+	files->north = 0;
+	files->east = 0;
+	files->south = 0;
+	files->west = 0;
+	files->f = 0;
+	files->f1 = 0;
+	files->f2 = 0;
+	files->f3 = 0;
+	files->f4 = 0;
+	files->f5 = 0;
+	files->f6 = 0;
+	map->spawn = 0;
+	map->item = 0;
+}

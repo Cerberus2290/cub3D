@@ -23,6 +23,8 @@ static int	read_cub(char **str, int fd)
 	return (0);
 }
 
+/*reads the mapfile .cub and checks for errors
+ *in the input file and prepares data in the file*/
 int	get_cub(int fd, char ***tab)
 {
 	char	*s1;
