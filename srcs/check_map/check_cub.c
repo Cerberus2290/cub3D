@@ -64,3 +64,50 @@ int	checking(t_map *map, size_t *map_len)
 	}
 	return (0);
 }
+
+int	cpl_map_len(char **map, size_t **map_len)
+{
+	size_t	x;
+	size_t	y;
+
+	y = 0;
+	while (map[y])
+	{
+		x = 0;
+		while (map[y][x])
+		{
+			if (!(is_map(map[y][x]) || map[y][x] == 32 || map[y][x] == '\n'))
+				return (write_error("Error\nBad map element\n"));
+			x++;
+		}
+		(*map_len)[y] = x;
+		y++;
+	}
+	return (0);
+}
+
+int	check_cub(t_map *map)
+{
+	size_t	*map_len;
+
+	map_len = malloc(sizeof(size_t) * map->map_len);
+	if (!map_len)
+		return (write_error("Error\nNo map found\n"));
+	if (cpl_map_len(map->map, &map_len))
+	{
+		free(map_len);
+		return (1);
+	}
+	if (checking(map, map_len))
+	{
+		free(map_len);
+		return (1);
+	}
+	if (!map->spawn)
+	{
+		free(map_len);
+		return (write_error("Error\nNo place to spawn\n"));
+	}
+	free(map_len);
+	return (0);
+}

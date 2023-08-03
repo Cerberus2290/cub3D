@@ -186,6 +186,8 @@ int			is_printable(char *str);
 int			is_spawn(char c);
 int			within_map(char c);
 int			is_map(char c);
+int			element_map(t_files *files, char **tab);
+int			check_cub(t_map *map);
 
 //
 
