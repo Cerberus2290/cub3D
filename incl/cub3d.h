@@ -188,6 +188,8 @@ int			within_map(char c);
 int			is_map(char c);
 int			element_map(t_files *files, char **tab);
 int			check_cub(t_map *map);
+void		ft_tab_len(t_files *files, char **tab);
+int			take_cub(t_files *files, t_map *map, char **tab);
 
 //
 

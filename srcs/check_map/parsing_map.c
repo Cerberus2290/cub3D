@@ -6,7 +6,7 @@
 /*   By: tstrassb <tstrassb@student.42wolfsburg.d>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 10:02:05 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/03 10:54:30 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/07 15:09:49 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,18 @@ int	extension_cub(char *str)
 		i--;
 	if (!i || ft_strncmp(".cub", &str[i], 4))
 		exit(write_error("Error\nMap file must end in [.cub]\n"));
+	return (0);
+}
+
+int	all_face(t_files *files)
+{
+	if (!files->f1 || !files->f2 || !files->f3
+		|| !files->f4 || !files->f5 || !files->f6)
+	{
+		ft_free(files->north, files->east, files-> south, files->west);
+		ft_free(files->c, files->f, files, 0);
+		return (1);
+	}
 	return (0);
 }
 
@@ -45,7 +57,7 @@ int	parse_map(t_map *map, t_files *files, char **argv)
 		return (free_tab(tab, 1));
 	if (all_face(files))
 		return (free_tab(tab, 1));
-	if (take_map(files, map, tab))
+	if (take_cub(files, map, tab))
 		return (free_tab(tab, 1));
 	if (check_cub(map))
 	{
