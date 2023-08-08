@@ -6,7 +6,7 @@
 /*   By: tstrassb <tstrassb@student.42wolfsburg.d>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 11:33:24 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/03 15:07:37 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/08 11:03:37 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -190,6 +190,8 @@ int			element_map(t_files *files, char **tab);
 int			check_cub(t_map *map);
 void		ft_tab_len(t_files *files, char **tab);
 int			take_cub(t_files *files, t_map *map, char **tab);
+int			convert_color(int *color, char *str);
+int			ft_isspace(char c);
 
 //
 
@@ -201,5 +203,6 @@ t_list		*ft_lstnew(void *cont);
 t_doublell	*doublelst_new(void *cont);
 void		doublelst_addback(t_doublell **lst, t_doublell *new);
 void		init_struct(t_files *files, t_map *map);
+
 
 #endif

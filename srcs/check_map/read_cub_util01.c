@@ -18,7 +18,7 @@ int	write_error(char *str)
 	return (1);
 }
 
-static int	ft_isspace(char c)
+int	ft_isspace(char c)
 {
 	if (c == 32 || (c >= 9 && c <= 12))
 		return (1);
