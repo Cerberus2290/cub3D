@@ -6,7 +6,7 @@
 /*   By: tstrassb <tstrassb@student.42wolfsburg.d>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 15:00:06 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/08 11:06:29 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/08 15:45:26 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ static int	free_take_cub(t_files *files, t_map *map)
 	return (write_error("Error\nMalloc failed\n"));
 }
 
+/*responsible for extracting the map data from the [tab] array
+ * and stores it in the t_map structure*/
 int	take_cub(t_files *files, t_map *map, char **tab)
 {
 	size_t	i;

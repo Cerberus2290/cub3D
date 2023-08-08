@@ -6,7 +6,7 @@
 /*   By: tstrassb <tstrassb@student.42wolfsburg.d>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 17:08:32 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/07 14:53:44 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/08 11:12:53 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ int	checking(t_map *map, size_t *map_len)
 	return (0);
 }
 
+/*calculates the length of the complete map*/
 int	cpl_map_len(char **map, size_t **map_len)
 {
 	size_t	x;
@@ -86,6 +87,8 @@ int	cpl_map_len(char **map, size_t **map_len)
 	return (0);
 }
 
+/*performs various checks to validate the map,
+including checking for map closure, presence of spawn points*/
 int	check_cub(t_map *map)
 {
 	size_t	*map_len;

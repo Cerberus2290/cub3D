@@ -6,12 +6,14 @@
 /*   By: tstrassb <tstrassb@student.42wolfsburg.d>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 10:02:05 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/08 11:03:27 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/08 15:42:58 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/cub3d.h"
 
+/*goes through the input string until it finds '.'
+ * checks if file extension ends in ".cub"*/
 int	extension_cub(char *str)
 {
 	size_t	i;
@@ -27,6 +29,8 @@ int	extension_cub(char *str)
 	return (0);
 }
 
+/*confirms that the required texture paths
+ * ("NO", "EA", etc.) and color elements ("F", "C") are correctly specified*/
 int	all_face(t_files *files)
 {
 	if (!files->f1 || !files->f2 || !files->f3
@@ -39,6 +43,8 @@ int	all_face(t_files *files)
 	return (0);
 }
 
+/*main function responsible for parsing the data
+ * necessary to create the entire map*/
 int	parse_map(t_map *map, t_files *files, char **argv)
 {
 	char	**tab;
@@ -83,6 +89,7 @@ int	file_convert(t_data *data, t_map *map, t_files *files)
 	return (0);
 }
 
+/*higher-level function responsible for the parsing and data conversion*/
 int	parsing_map(t_data *data, t_map *map, char **argv)
 {
 	t_files	*files;

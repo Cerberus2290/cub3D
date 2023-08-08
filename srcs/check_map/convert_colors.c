@@ -6,12 +6,13 @@
 /*   By: tstrassb <tstrassb@student.42wolfsburg.d>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 15:11:39 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/08 11:03:48 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/08 15:15:10 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/cub3d.h"
 
+/*goes through the string of the color input*/
 int	check_str_color(char *str)
 {
 	size_t	i;
@@ -30,6 +31,7 @@ int	check_str_color(char *str)
 	return (0);
 }
 
+/*skips white spaces to look for the ',' in the color input*/
 size_t	ft_lookup_comma(char *str, size_t start)
 {
 	size_t		end;
@@ -50,6 +52,7 @@ size_t	ft_lookup_comma(char *str, size_t start)
 	return (check);
 }
 
+/*splits the 3 color values and stores them in [tab]*/
 char	**split_color(char *str)
 {
 	char	**tab;
@@ -79,6 +82,8 @@ char	**split_color(char *str)
 	return (tab);
 }
 
+/*converts RGB color components into a
+ * single integer color value using bitwise operations*/
 int	ft_rgb(int *color, unsigned int rgb[3], int i)
 {
 	if (rgb[i] > 255)
@@ -87,6 +92,11 @@ int	ft_rgb(int *color, unsigned int rgb[3], int i)
 	return (0);
 }
 
+/*parses and converts RGB color values
+ * from a string format to an integer format
+ * It ensures that the input string is well-formatted,
+ * converts the RGB components, and combines them into
+ * a single integer color value for further use*/
 int	convert_color(int *color, char *str)
 {
 	unsigned int	rgb[3];

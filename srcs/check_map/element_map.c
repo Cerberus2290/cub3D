@@ -6,12 +6,13 @@
 /*   By: tstrassb <tstrassb@student.42wolfsburg.d>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 14:18:22 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/03 15:07:47 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/08 15:35:08 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../incl/cub3d.h"
 
+/*determines the type of elements encountered while parsing the map file*/
 int	element_type(char *str, size_t i)
 {
 	if (!ft_strncmp("NO ", &str[i], 2))
@@ -32,6 +33,7 @@ int	element_type(char *str, size_t i)
 		return (0);
 }
 
+/*stores data associated with different directions in the map file*/
 int	face_cpl(t_files *files, char *str, size_t start, int face)
 {
 	size_t	end;
@@ -58,6 +60,9 @@ int	face_cpl(t_files *files, char *str, size_t start, int face)
 	return (0);
 }
 
+/*ensures that the correct elements are recognized
+ * their associated data is extracted
+ * and the t_files structure is appropriately updated*/
 int	face_map(t_files *files, char *str, size_t i)
 {
 	int	face;
@@ -83,6 +88,11 @@ int	face_map(t_files *files, char *str, size_t i)
 	return (0);
 }
 
+/*iterates through each line of the map section
+ * parsing and storing the data for the elements found in each line
+ * error handling ensures that any failure during parsing
+ * results in the deallocation of memory
+ * and a return of 1 to indicate the error*/
 int	element_map(t_files *files, char **tab)
 {
 	size_t	i;
