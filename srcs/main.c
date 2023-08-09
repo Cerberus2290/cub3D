@@ -40,4 +40,11 @@ int	main(int argc, char **argv)
 	init_map(&map, data);
 	if (parsing_map(data, &map, argv))
 		free_on_exit(data);
+	//mlx_mouse_move(...); 								//function for mouse movement
+	//data->n_sprites = ft_lstsize(data->map->item); 	//function for collectibles
+	create_spawn(data);
+	//create_plane(data, data->map->dir_spawn);
+	mlx_mouse_hide();
+	mlx_do_key_autorepeaton(data->mlx);
+	mlx_hook(data->mlx_win, 2, 0, handle_keys, data);
 }

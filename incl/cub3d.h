@@ -31,6 +31,15 @@
 # define WINDOW_W 900
 # define WINDOW_H 680
 
+# define ESC		53
+# define E_KEY		14
+# define W_KEY		13
+# define S_KEY		1
+# define D_KEY		2
+# define A_KEY		0
+# define LEFT_KEY	123
+# define RIGHT_KEY	124
+
 typedef struct s_doublell
 {
 	void				*content;
@@ -210,6 +219,8 @@ int			init_data(t_data *data);
 void		init_player(t_data *data);
 int			free_on_exit(t_data *data);
 void		doublelst_free(t_doublell **list);
+void		create_spawn(t_data *data);
+int			handle_keys(int key, t_data *data);
 
 
 #endif

@@ -12,3 +12,10 @@
 
 #include "../incl/cub3d.h"
 
+void	create_spawn(t_data *data)
+{
+	init_player(data);
+	data->map->dir_spawn = ((t_items *)(data->map->spawn->content))->type;
+	data->player->pos_x = ((t_items *)(data->map->spawn->content))->pos_y + 0.5;
+	data->player->pos_y = ((t_items *)(data->map->spawn->content))->pos_x + 0.5;
+}
