@@ -192,6 +192,7 @@ void		ft_tab_len(t_files *files, char **tab);
 int			take_cub(t_files *files, t_map *map, char **tab);
 int			convert_color(int *color, char *str);
 int			ft_isspace(char c);
+int			parsing_map(t_data *data, t_map *map, char **argv);
 
 //
 
