@@ -6,7 +6,7 @@
 /*   By: tstrassb <tstrassb@student.42wolfsburg.d>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 14:18:22 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/08 15:35:08 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/09 13:15:17 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int	face_cpl(t_files *files, char *str, size_t start, int face)
 	if ((face == 1 && !files->north) || (face == 2 && !files->east)
 		|| (face == 3 && !files->south) || (face == 4 && !files->west)
 		|| (face == 5 && !files->f) || (face == 6 && !files->c))
-		return (write_error("Error\nMalloc\n"));
+		return (write_error("error: map:\nerror with directions\n"));
 	return (0);
 }
 
@@ -74,7 +74,7 @@ int	face_map(t_files *files, char *str, size_t i)
 		return (0);
 	face = element_type(str, i);
 	if (face == 0)
-		return (write_error("Error\nFound bad element\n"));
+		return (write_error("error: map:\nfound unrecognized element\n"));
 	else if (face == 7)
 		return (2);
 	while (str[i] && str[i] != 32)

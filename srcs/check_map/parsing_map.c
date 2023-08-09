@@ -6,7 +6,7 @@
 /*   By: tstrassb <tstrassb@student.42wolfsburg.d>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 10:02:05 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/08 15:42:58 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/09 13:16:32 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	extension_cub(char *str)
 	while (i && str[i] != '.')
 		i--;
 	if (!i || ft_strncmp(".cub", &str[i], 4))
-		exit(write_error("Error\nMap file must end in [.cub]\n"));
+		exit(write_error("error: map:\nmap file must end in [.cub]\n"));
 	return (0);
 }
 
@@ -52,7 +52,7 @@ int	parse_map(t_map *map, t_files *files, char **argv)
 
 	fd = open(argv[1], O_RDONLY);
 	if (fd == -1)
-		exit(write_error("Error\nCould not open map file\n"));
+		exit(write_error("error: map:\nunable to open map file\n"));
 	if (get_cub(fd, &tab))
 	{
 		ft_free(files->north, files->east, files->south, files->west);
@@ -74,7 +74,7 @@ int	parse_map(t_map *map, t_files *files, char **argv)
 	return (free_tab(tab, 0));
 }
 
-int	file_convert(t_data *data, t_map *map, t_files *files)
+/*int	file_convert(t_data *data, t_map *map, t_files *files)
 {
 	texture_init(data, 1, files->north);
 	texture_init(data, 2, files->east);
@@ -82,18 +82,19 @@ int	file_convert(t_data *data, t_map *map, t_files *files)
 	texture_init(data, 4, files->west);
 	ft_free(files->north, files->east, files->south, files->west);
 	texture_init(data, 5, "./resources/texture1.xpm");
-	/*texture_init(data, ..., "./resources/...");*/
+	*//*texture_init(data, ..., "./resources/...");*//*
 	if (convert_color(&map->f, files->f) || convert_color(&map->c, files->c))
-		exit(write_error("Error\nColor error\n"));
+		exit(write_error("error: map:\ncolor code error\n"));
 	ft_free(files->c, files->f, files, 0);
 	return (0);
-}
+}*/
 
 /*higher-level function responsible for the parsing and data conversion*/
 int	parsing_map(t_data *data, t_map *map, char **argv)
 {
 	t_files	*files;
 
+	(void)data;
 	files = malloc(sizeof(t_files));
 	if (!files)
 		return (1);
@@ -102,7 +103,7 @@ int	parsing_map(t_data *data, t_map *map, char **argv)
 	init_struct(files, map);
 	if (parse_map(map, files, argv))
 		return (1);
-	if (file_convert(data, map, files))
-		return (1);
+	/*if (file_convert(data, map, files))
+		return (1);*/
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: tstrassb <tstrassb@student.42wolfsburg.d>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 15:11:39 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/08 15:15:10 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/09 13:13:34 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -107,7 +107,7 @@ int	convert_color(int *color, char *str)
 		return (1);
 	tab = split_color(str);
 	if (tab == 0)
-		exit(write_error("Error\nmalloc_failed\n"));
+		exit(write_error("error: map:\nmalloc for color failed\n"));
 	i = -1;
 	while (tab[++i])
 		rgb[i] = ft_atoi(tab[i]);

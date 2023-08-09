@@ -102,6 +102,8 @@ typedef struct l_player
 	double	total_rots;
 }	t_player;
 
+/*struct for raycasting
+ * dda = Digital Differential Analysis*/
 typedef struct l_dda
 {
 	int		screen_x;
@@ -170,7 +172,7 @@ typedef struct l_data_mlx
 	int			n_sprites;
 	t_sprites	*sprites;
 	t_time		*time;
-	t_imgs		*imgs;
+	t_imgs		**imgs;
 	t_map		*map;
 	t_player	*player;
 	t_dda		*dda;
@@ -204,6 +206,10 @@ t_list		*ft_lstnew(void *cont);
 t_doublell	*doublelst_new(void *cont);
 void		doublelst_addback(t_doublell **lst, t_doublell *new);
 void		init_struct(t_files *files, t_map *map);
+int			init_data(t_data *data);
+void		init_player(t_data *data);
+int			free_on_exit(t_data *data);
+void		doublelst_free(t_doublell **list);
 
 
 #endif

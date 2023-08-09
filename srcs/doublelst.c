@@ -52,3 +52,21 @@ void	doublelst_addback(t_doublell **lst, t_doublell *new)
 		(*lst)->prev = new;
 	}
 }
+
+void	doublelst_free(t_doublell **list)
+{
+	t_doublell	*temp;
+	t_doublell	*first;
+
+	if (*list == 0)
+		return ;
+	temp = (*list)->next;
+	(*list)->next = 0;
+	while (temp)
+	{
+		free(temp->content);
+		first = temp;
+		temp = temp->next;
+		free(first);
+	}
+}
