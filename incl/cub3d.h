@@ -222,5 +222,4 @@ void		doublelst_free(t_doublell **list);
 void		create_spawn(t_data *data);
 int			handle_keys(int key, t_data *data);
 
-
 #endif
