@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42wolfsburg.d>  +#+  +:+       +#+        */
+/*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 10:02:17 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/09 13:19:13 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/10 09:31:53 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,4 +47,6 @@ int	main(int argc, char **argv)
 	mlx_mouse_hide();
 	mlx_do_key_autorepeaton(data->mlx);
 	mlx_hook(data->mlx_win, 2, 0, handle_keys, data);
+
+	
 }
