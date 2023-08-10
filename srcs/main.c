@@ -47,5 +47,4 @@ int	main(int argc, char **argv)
 	mlx_mouse_hide();
 	mlx_do_key_autorepeaton(data->mlx);
 	mlx_hook(data->mlx_win, 2, 0, handle_keys, data);
-
 }
