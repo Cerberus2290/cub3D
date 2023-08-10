@@ -51,6 +51,7 @@ $(NAME):	$(OBJS)
 
 fclean:
 				@echo "$(GREY)cleaning all...$(DEF_COLOR)"
+				@make clean -C mlx/
 				@make fclean -C libft/
 				@$(RM) $(OBJS)
 				@$(RM) $(NAME)
