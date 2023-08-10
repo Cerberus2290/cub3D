@@ -14,7 +14,18 @@
 
 void	spawn_changer(int key, t_data *data)
 {
-
+	if (key == UP_KEY)
+	{
+		data->map->spawn = data->map->spawn->next;
+		create_spawn(data);
+		create_plane(data, data->map->dir_spawn);
+	}
+	if (key == DOWN_KEY)
+	{
+		data->map->spawn = data->map->spawn->prev;
+		create_spawn(data);
+		create_plane(data, data->map->dir_spawn);
+	}
 }
 
 int	exit_keys(int key, t_data *data)

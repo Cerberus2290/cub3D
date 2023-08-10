@@ -19,7 +19,7 @@
 # else
 #  include "../mlx_linux/mlx.h"
 # endif
-# include "../mlx/mlx.h"						//mlx - Library
+# include "../mlx/mlx.h"				//mlx - Library
 # include <math.h>						//collection of mathematical functions
 # include <stdio.h>						//printf, perror, strerror
 # include <fcntl.h>						//open
@@ -224,5 +224,6 @@ void		doublelst_free(t_doublell **list);
 void		create_spawn(t_data *data);
 int			handle_keys(int key, t_data *data);
 int			exit_keys(int key, t_data *data);
+void		create_plane(t_data *data, char flag);
 
 #endif
