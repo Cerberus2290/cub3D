@@ -10,7 +10,7 @@ HEADER		=	incl/cub3d.h
 
 LIBFT		=	-L libft -lft
 
-INCLUDE		=	-lmlx -framework OpenGL -framework AppKit
+INCLUDE		=	-I minilibx -L mlx -lmlx -framework OpenGL -framework AppKit
 
 #colors
 DEF_COLOR	=	\033[0;39m
@@ -24,7 +24,8 @@ MAGENTA		=	\033[0;95m
 CYAN		=	\033[0;96m
 WHITE		=	\033[0;97m
 
-MAIN		=	doublelst free_utils init_data main split01 util01 util02
+MAIN		=	doublelst free_utils init_data main split01 util01 util02 \
+				handle_keys
 
 CHECK_MAP	=	check_cub convert_colors element_map parsing_map \
 				read_cub read_cub_util01 read_cub_util02 take_cub
@@ -38,6 +39,7 @@ all:		$(NAME)
 
 $(NAME):	$(OBJS)
 			@echo "\n"
+			@make all -C mlx
 			@make -C libft/
 			@echo "$(YELLOW)compiling cub3d...$(DEF_COLOR)"
 			@$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(INCLUDE) $(LIBFT)

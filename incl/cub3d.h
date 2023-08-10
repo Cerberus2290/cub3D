@@ -19,7 +19,7 @@
 # else
 #  include "../mlx_linux/mlx.h"
 # endif
-# include <mlx.h>						//mlx - Library
+# include "../mlx/mlx.h"						//mlx - Library
 # include <math.h>						//collection of mathematical functions
 # include <stdio.h>						//printf, perror, strerror
 # include <fcntl.h>						//open
@@ -39,6 +39,8 @@
 # define A_KEY		0
 # define LEFT_KEY	123
 # define RIGHT_KEY	124
+# define UP_KEY		126
+# define DOWN_KEY	125
 
 typedef struct s_doublell
 {
@@ -221,5 +223,6 @@ int			free_on_exit(t_data *data);
 void		doublelst_free(t_doublell **list);
 void		create_spawn(t_data *data);
 int			handle_keys(int key, t_data *data);
+int			exit_keys(int key, t_data *data);
 
 #endif

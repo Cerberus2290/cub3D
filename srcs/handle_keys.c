@@ -12,6 +12,32 @@
 
 #include "../incl/cub3d.h"
 
+void	spawn_changer(int key, t_data *data)
+{
+
+}
+
+int	exit_keys(int key, t_data *data)
+{
+	if (key == LEFT_KEY)
+		data->player->rot = 0;
+	if (key == RIGHT_KEY)
+		data->player->rot = 0;
+	if (key == LEFT_KEY)
+		data->player->rot = 0;
+	if (key == RIGHT_KEY)
+		data->player->rot = 0;
+	if (key == W_KEY)
+		data->player->de_y = 0;
+	if (key == S_KEY)
+		data->player->de_y = 0;
+	if (key == D_KEY)
+		data->player->de_x = 0;
+	if (key == A_KEY)
+		data->player->de_x = 0;
+	return (0);
+}
+
 void	dir_key(t_data *data)
 {
 	if (data->map->map[(int)(data->player->pos_x - 1.0)] \
@@ -22,8 +48,14 @@ void	dir_key(t_data *data)
 		[(int)(data->player->pos_y)] == 'D')
 		data->map->map[(int)(data->player->pos_x + 1.0 + data->player->dir_x \
 		* data->player->de_y)][(int)(data->player->pos_y)] = '0';
-	else if (data->map->map[(int)(data->player->pos_y + 1.0)] \
-		[(int)(data->player->pos_x)] == 'D')
+	else if (data->map->map[(int)(data->player->pos_x)] \
+		[(int)(data->player->pos_y + 1.0)] == 'D')
+		data->map->map[(int)(data->player->pos_x + data->player->dir_x \
+		* data->player->de_y)][(int)(data->player->pos_y + 1.0)] = '0';
+	else if (data->map->map[(int)(data->player->pos_x)] \
+		[(int)(data->player->pos_y - 1.0)] == 'D')
+		data->map->map[(int)(data->player->pos_x + data->player->dir_x \
+		* data->player->de_y)][(int)(data->player->pos_y - 1.0)] = '0';
 }
 
 int	handle_keys(int key, t_data *data)
