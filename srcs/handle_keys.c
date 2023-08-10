@@ -22,6 +22,8 @@ void	dir_key(t_data *data)
 		[(int)(data->player->pos_y)] == 'D')
 		data->map->map[(int)(data->player->pos_x + 1.0 + data->player->dir_x \
 		* data->player->de_y)][(int)(data->player->pos_y)] = '0';
+	else if (data->map->map[(int)(data->player->pos_y + 1.0)] \
+		[(int)(data->player->pos_x)] == 'D')
 }
 
 int	handle_keys(int key, t_data *data)
