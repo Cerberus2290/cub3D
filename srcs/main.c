@@ -12,6 +12,14 @@
 
 #include "../incl/cub3d.h"
 
+int	start_game(t_data *data)
+{
+	//update_param(...)			//function to update parameters of the game
+	//raycaster(...)			//call to the raycaster
+	mlx_put_image_to_window(data->mlx, data->mlx_win, data->p_img, 0, 0);
+	return (0);
+}
+
 void	init_map(t_map *map, t_data *data)
 {
 	map->spawn = 0;
@@ -43,9 +51,12 @@ int	main(int argc, char **argv)
 	//mlx_mouse_move(...); 								//function for mouse movement
 	//data->n_sprites = ft_lstsize(data->map->item); 	//function for collectibles
 	create_spawn(data);
-	//create_plane(data, data->map->dir_spawn);
+	create_plane(data, data->map->dir_spawn);
 	mlx_mouse_hide();
 	mlx_do_key_autorepeaton(data->mlx);
 	mlx_hook(data->mlx_win, 2, 0, handle_keys, data);
 	mlx_hook(data->mlx_win, 3, 0, exit_keys, data);
+	mlx_hook(data->mlx_win, 17, 0, free_on_exit, data);
+	mlx_loop_hook(data->mlx, start_game, data);
+	mlx_loop(data->mlx);
 }
