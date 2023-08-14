@@ -5,4 +5,5 @@
 .idea
 find_key_mlx.c
 find_keys
+find_key
 mlx/libmlx.a
