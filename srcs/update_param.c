@@ -27,6 +27,8 @@ void	update_param(t_data *data, double rot)
 		- data->player->player_y * sin(rot);
 	data->player->player_y = old_plane_x * sin(rot)
 		+ data->player->player_y * cos(rot);
-	if (!ft_strchr("1D", data->map->map[(int)(data->player->pos_x +
-			data->player->dir_x)]))
+	if (!ft_strchr("1D", data->map->map[(int)(data->player->pos_x
+				+ data->player->dir_x * data->player->de_y)]
+		[(int)(data->player->pos_y)]))
+		data->player->pos_x += data->player->dir_y * data->player->de_y;
 }
