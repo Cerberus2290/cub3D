@@ -57,3 +57,5 @@ fclean:
 				@$(RM) $(NAME)
 				@$(RM) cub3d.dSYM
 				@echo "$(GREY)Done!$(DEF_COLOR)"
+
+re:			fclean all

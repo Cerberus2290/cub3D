@@ -11,29 +11,24 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <unistd.h>
 
 int	ft_atoi(const char *str)
 {
-	int	i;
-	int	neg;
-	int	res;
+	size_t	i;
+	size_t	j;
 
 	i = 0;
-	neg = 1;
-	res = 0;
-	while (str[i] == '\t' || str[i] == '\n' || str[i] == '\v'
-		|| str[i] == '\r' || str[i] == '\f' || str[i] == ' ')
-		i++;
-	if (str[i] == '-' || str[i] == '+')
+	j = 0;
+	if (!str || !str[i])
+		return (-1);
+	while (str[i] && str[i] >= 48 && str[i] <= 57)
 	{
-		if (str[i] == '-')
-			neg = -1;
-		i++;
+		j = j * 10 + (str[i++] - 48);
+		if (j > 2147483647)
+			return (-1);
 	}
-	while (str[i] >= '0' && str[i] <= '9')
-	{
-		res = (res * 10) + (str[i] - '0');
-		i++;
-	}
-	return (res * neg);
+	if (str[i])
+		return (-1);
+	return (j);
 }
