@@ -12,7 +12,7 @@
 
 #include "../../incl/cub3d.h"
 
-static int	read_cub(char **str, int fd)
+int	read_cub(char **str, int fd)
 {
 	long	len;
 

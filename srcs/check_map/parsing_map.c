@@ -55,7 +55,7 @@ int	parse_map(t_map *map, t_files *files, char **argv)
 		exit(write_error("error: map:\nunable to open map file\n"));
 	if (get_cub(fd, &tab))
 	{
-		ft_free(files->north, files->east, files->south, files->west);
+		ft_free(files->north, files->south, files->west, files->east);
 		return (ft_free(files->c, files->f, files, 0));
 	}
 	close(fd);
@@ -67,34 +67,38 @@ int	parse_map(t_map *map, t_files *files, char **argv)
 		return (free_tab(tab, 1));
 	if (check_cub(map))
 	{
-		ft_free(files->north, files->east, files->south, files->west);
+		ft_free(files->north, files->south, files->west, files->east);
 		ft_free(files->c, files->f, files, 0);
 		return (free_tab(tab, 1));
 	}
 	return (free_tab(tab, 0));
 }
 
-/*int	file_convert(t_data *data, t_map *map, t_files *files)
+int	file_convert(t_data *data, t_map *map, t_files *files)
 {
-	texture_init(data, 1, files->north);
-	texture_init(data, 2, files->east);
-	texture_init(data, 3, files->south);
-	texture_init(data, 4, files->west);
-	ft_free(files->north, files->east, files->south, files->west);
-	texture_init(data, 5, "./resources/texture1.xpm");
-	*//*texture_init(data, ..., "./resources/...");*//*
+	init_xpm(data, 1, files->north);
+	init_xpm(data, 2, files->east);
+	init_xpm(data, 3, files->south);
+	init_xpm(data, 4, files->west);
+	ft_free(files->north, files->south, files->west, files->east);
+	//init_xpm(data, 5, "./resources/texture1.xpm");
+	init_xpm(data, 6, "./resources/object_01.xpm");
+	init_xpm(data, 7, "./resources/object_02.xpm");
+	init_xpm(data, 8, "./resources/object_03.xpm");
+	init_xpm(data, 9, "./resources/object_04.xpm");
+	init_xpm(data, 10, "./resources/object_05.xpm");
+	init_xpm(data, 11, "./resources/object_06.xpm");
 	if (convert_color(&map->f, files->f) || convert_color(&map->c, files->c))
 		exit(write_error("error: map:\ncolor code error\n"));
 	ft_free(files->c, files->f, files, 0);
 	return (0);
-}*/
+}
 
 /*higher-level function responsible for the parsing and data conversion*/
 int	parsing_map(t_data *data, t_map *map, char **argv)
 {
 	t_files	*files;
 
-	(void)data;
 	files = malloc(sizeof(t_files));
 	if (!files)
 		return (1);
@@ -103,7 +107,7 @@ int	parsing_map(t_data *data, t_map *map, char **argv)
 	init_struct(files, map);
 	if (parse_map(map, files, argv))
 		return (1);
-	/*if (file_convert(data, map, files))
-		return (1);*/
+	if (file_convert(data, map, files))
+		return (1);
 	return (0);
 }

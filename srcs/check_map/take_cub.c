@@ -15,7 +15,7 @@
 static int	free_take_cub(t_files *files, t_map *map)
 {
 	(void)map;
-	ft_free(files->north, files->east, files->south, files->west);
+	ft_free(files->north, files->south, files->west, files->east);
 	ft_free(files->c, files->f, files, 0);
 	return (write_error("error: map:\nmalloc failed\n"));
 }

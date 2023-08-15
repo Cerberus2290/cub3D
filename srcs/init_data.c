@@ -25,6 +25,17 @@ void	init_player(t_data *data)
 	data->player->total_rots = 0;
 }
 
+/*initializes xmp files for textures*/
+void	init_xpm(t_data *data, int i, char *path)
+{
+	data->imgs[i]->p_img = mlx_xpm_file_to_image(data->mlx,
+			path, &data->imgs[i]->width, &data->imgs[i]->height);
+	if (!(data->imgs[i]->p_img))
+		exit(write_error("error: map:\nfailed to load xpm\n"));
+	data->imgs[i]->p_img = mlx_get_data_addr(data->imgs[i]->p_img,
+			&data->imgs[i]->bt, &data->imgs[i]->s_line, &data->imgs[i]->endian);
+}
+
 /*initializes various components and structures within t_data structure*/
 int	init_data(t_data *data)
 {
@@ -36,7 +47,7 @@ int	init_data(t_data *data)
 	data->player = malloc(sizeof(t_player));
 	data->dda = malloc(sizeof(t_dda));
 	data->time = malloc(sizeof(t_time));
-	data->imgs = malloc(sizeof(t_imgs));
+	data->imgs = malloc(sizeof(t_imgs *) * 17);
 	if (!data->mlx || !data->mlx_win || !data->player
 		|| !data->dda || !data->time || !data->imgs)
 		return (1);

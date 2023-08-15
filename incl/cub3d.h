@@ -170,7 +170,7 @@ typedef struct l_map
 	char		dir_spawn;
 }	t_map;
 
-typedef struct l_data_mlx
+typedef struct l_data
 {
 	void		*mlx;
 	void		*mlx_win;
@@ -206,6 +206,7 @@ int			take_cub(t_files *files, t_map *map, char **tab);
 int			convert_color(int *color, char *str);
 int			ft_isspace(char c);
 int			parsing_map(t_data *data, t_map *map, char **argv);
+void		init_xpm(t_data *data, int i, char *path);
 
 //
 
@@ -226,5 +227,6 @@ int			handle_keys(int key, t_data *data);
 int			exit_keys(int key, t_data *data);
 void		create_plane(t_data *data, char flag);
 void		update_param(t_data *data, double rot);
+int			file_convert(t_data *data, t_map *map, t_files *files);
 
 #endif
