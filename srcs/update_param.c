@@ -12,7 +12,7 @@
 
 #include "../incl/cub3d.h"
 
-void	update_param(t_data *data, double rot)
+void	update_rotation(t_data *data, double rot)
 {
 	double	old_dir_x;
 	double	old_plane_x;
@@ -27,20 +27,24 @@ void	update_param(t_data *data, double rot)
 		- data->player->player_y * sin(rot);
 	data->player->player_y = old_plane_x * sin(rot)
 		+ data->player->player_y * cos(rot);
+}
+
+void	update_movement(t_data *data, double de_x, double de_y)
+{
 	if (!ft_strchr("1D", data->map->map[(int)(data->player->pos_x
 				+ data->player->dir_x * data->player->de_y)]
 		[(int)(data->player->pos_y)]))
 		data->player->pos_x += data->player->dir_y * data->player->de_y;
 	if (!ft_strchr("1D", data->map->map[(int)(data->player->pos_x)]
-		[(int)(data->player->pos_y + data->player->dir_y
-			* data->player->de_y)]))
+		[(int)(data->player->pos_y
+			+ data->player->dir_y * data->player->de_y)]))
 		data->player->pos_y += data->player->dir_y * data->player->de_y;
 	if (!ft_strchr("1D", data->map->map[(int)(data->player->pos_x
 				+ data->player->player_x * data->player->de_x)]
 		[(int)(data->player->pos_y)]))
 		data->player->pos_x += data->player->player_x * data->player->de_x;
 	if (!ft_strchr("1D", data->map->map[(int)(data->player->pos_x)]
-		[(int)(data->player->pos_y + data->player->player_y
-			* data->player->de_x)]))
+		[(int)(data->player->pos_y
+			+ data->player->player_y * data->player->de_x)]))
 		data->player->pos_y += data->player->player_y * data->player->de_x;
 }
