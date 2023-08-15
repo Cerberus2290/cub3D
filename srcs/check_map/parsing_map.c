@@ -36,7 +36,7 @@ int	all_face(t_files *files)
 	if (!files->f1 || !files->f2 || !files->f3
 		|| !files->f4 || !files->f5 || !files->f6)
 	{
-		ft_free(files->north, files->east, files-> south, files->west);
+		ft_free(files->north, files->south, files-> west, files->east);
 		ft_free(files->c, files->f, files, 0);
 		return (1);
 	}
