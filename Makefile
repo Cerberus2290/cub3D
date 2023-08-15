@@ -25,7 +25,7 @@ CYAN		=	\033[0;96m
 WHITE		=	\033[0;97m
 
 MAIN		=	doublelst free_utils init_data main split01 util01 util02 \
-				handle_keys
+				handle_keys update_param
 
 CHECK_MAP	=	check_cub convert_colors element_map parsing_map \
 				read_cub read_cub_util01 read_cub_util02 take_cub

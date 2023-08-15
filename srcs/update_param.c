@@ -29,7 +29,7 @@ void	update_rotation(t_data *data, double rot)
 		+ data->player->player_y * cos(rot);
 }
 
-void	update_movement(t_data *data, double de_x, double de_y)
+void	update_movement(t_data *data)
 {
 	if (!ft_strchr("1D", data->map->map[(int)(data->player->pos_x
 				+ data->player->dir_x * data->player->de_y)]
@@ -47,4 +47,10 @@ void	update_movement(t_data *data, double de_x, double de_y)
 		[(int)(data->player->pos_y
 			+ data->player->player_y * data->player->de_x)]))
 		data->player->pos_y += data->player->player_y * data->player->de_x;
+}
+
+void	update_param(t_data *data, double rot)
+{
+	update_rotation(data, rot);
+	update_movement(data);
 }

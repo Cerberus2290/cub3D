@@ -225,5 +225,6 @@ void		create_spawn(t_data *data);
 int			handle_keys(int key, t_data *data);
 int			exit_keys(int key, t_data *data);
 void		create_plane(t_data *data, char flag);
+void		update_param(t_data *data, double rot);
 
 #endif
