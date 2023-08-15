@@ -6,7 +6,7 @@
 /*   By: tstrassb <tstrassb@student.42wolfsburg.d>  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 13:45:21 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/14 13:45:21 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/15 09:04:58 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,16 @@ void	update_param(t_data *data, double rot)
 				+ data->player->dir_x * data->player->de_y)]
 		[(int)(data->player->pos_y)]))
 		data->player->pos_x += data->player->dir_y * data->player->de_y;
+	if (!ft_strchr("1D", data->map->map[(int)(data->player->pos_x)]
+		[(int)(data->player->pos_y + data->player->dir_y
+			* data->player->de_y)]))
+		data->player->pos_y += data->player->dir_y * data->player->de_y;
+	if (!ft_strchr("1D", data->map->map[(int)(data->player->pos_x
+				+ data->player->player_x * data->player->de_x)]
+		[(int)(data->player->pos_y)]))
+		data->player->pos_x += data->player->player_x * data->player->de_x;
+	if (!ft_strchr("1D", data->map->map[(int)(data->player->pos_x)]
+		[(int)(data->player->pos_y + data->player->player_y
+			* data->player->de_x)]))
+		data->player->pos_y += data->player->player_y * data->player->de_x;
 }
