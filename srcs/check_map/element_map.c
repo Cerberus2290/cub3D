@@ -17,11 +17,11 @@ int	element_type(char *str, size_t i)
 {
 	if (!ft_strncmp("NO ", &str[i], 2))
 		return (1);
-	else if (!ft_strncmp("EA ", &str[i], 2))
+	else if (!ft_strncmp("SO ", &str[i], 2))
 		return (2);
 	else if (!ft_strncmp("WE ", &str[i], 2))
 		return (3);
-	else if (!ft_strncmp("SO ", &str[i], 2))
+	else if (!ft_strncmp("EA ", &str[i], 2))
 		return (4);
 	else if (!ft_strncmp("F ", &str[i], 1))
 		return (5);
@@ -44,17 +44,17 @@ int	face_cpl(t_files *files, char *str, size_t start, int face)
 	if (face == 1 && ++files->f1)
 		files->north = ft_substr(str, start, end - start);
 	else if (face == 2 && ++files->f2)
-		files->east = ft_substr(str, start, end - start);
-	else if (face == 3 && ++files->f3)
 		files->south = ft_substr(str, start, end - start);
-	else if (face == 4 && ++files->f4)
+	else if (face == 3 && ++files->f3)
 		files->west = ft_substr(str, start, end - start);
+	else if (face == 4 && ++files->f4)
+		files->east = ft_substr(str, start, end - start);
 	else if (face == 5 && ++files->f5)
 		files->f = ft_substr(str, start, end - start);
 	else if (face == 6 && ++files->f6)
 		files->c = ft_substr(str, start, end - start);
-	if ((face == 1 && !files->north) || (face == 2 && !files->east)
-		|| (face == 3 && !files->south) || (face == 4 && !files->west)
+	if ((face == 1 && !files->north) || (face == 2 && !files->south)
+		|| (face == 3 && !files->west) || (face == 4 && !files->east)
 		|| (face == 5 && !files->f) || (face == 6 && !files->c))
 		return (write_error("error: map:\nerror with directions\n"));
 	return (0);
@@ -106,7 +106,7 @@ int	element_map(t_files *files, char **tab)
 		ret = face_map(files, tab[i], j);
 		if (ret == 1)
 		{
-			ft_free(files->north, files->east, files->south, files->west);
+			ft_free(files->north, files->south, files->west, files->east);
 			ft_free(files->c, files->f, files, 0);
 			return (1);
 		}

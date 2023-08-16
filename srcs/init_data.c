@@ -59,7 +59,7 @@ int	init_data(t_data *data)
 		i++;
 	}
 	data->sprites = malloc(sizeof(t_sprites));
-	data->sprites->buffer = malloc(sizeof(double) * (WINDOW_W) + 1);
+	data->sprites->buffer = malloc(sizeof(double) * (WINDOW_W + 1));
 	data->imgs[0]->p_img = mlx_get_data_addr(data->p_img, &data->imgs[0]->bt, \
 		&data->imgs[0]->s_line, &data->imgs[0]->endian);
 	return (0);

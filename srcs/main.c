@@ -48,7 +48,7 @@ int	main(int argc, char **argv)
 	init_map(&map, data);
 	if (parsing_map(data, &map, argv))
 		free_on_exit(data);
-	//mlx_mouse_move(...); 								//function for mouse movement
+	mlx_mouse_move(data->mlx_win, WINDOW_W / 2, WINDOW_H / 2);
 	data->n_sprites = ft_lstsize(data->map->item);
 	create_spawn(data);
 	create_plane(data, data->map->dir_spawn);

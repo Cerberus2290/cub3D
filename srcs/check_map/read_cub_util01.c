@@ -33,14 +33,16 @@ int	is_printable(char *str)
 	while (str[++i])
 	{
 		if (!ft_isspace(str[i]) && (str[i] < 32 || str[i] > 126))
+		{
 			return (1);
+		}
 	}
 	return (0);
 }
 
 int	is_spawn(char c)
 {
-	if (c == 'N' || c == 'E' || c == 'S' || c == 'W')
+	if (c == 'N' || c == 'S' || c == 'E' || c == 'W')
 		return (1);
 	return (0);
 }

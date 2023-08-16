@@ -53,7 +53,7 @@ int	free_tab(char **tab, int ret)
 	size_t	i;
 
 	i = 0;
-	while (tab[i] != NULL)
+	while (tab[i])
 		free(tab[i++]);
 	free(tab);
 	return (ret);

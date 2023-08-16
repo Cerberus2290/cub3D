@@ -77,9 +77,9 @@ int	parse_map(t_map *map, t_files *files, char **argv)
 int	file_convert(t_data *data, t_map *map, t_files *files)
 {
 	init_xpm(data, 1, files->north);
-	init_xpm(data, 2, files->east);
-	init_xpm(data, 3, files->south);
-	init_xpm(data, 4, files->west);
+	init_xpm(data, 2, files->south);
+	init_xpm(data, 3, files->west);
+	init_xpm(data, 4, files->east);
 	ft_free(files->north, files->south, files->west, files->east);
 	//init_xpm(data, 5, "./resources/texture1.xpm");
 	init_xpm(data, 6, "./resources/object_01.xpm");
