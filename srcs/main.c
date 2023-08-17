@@ -15,7 +15,7 @@
 int	start_game(t_data *data)
 {
 	update_param(data, data->player->rot);
-	//raycaster(...)			//call to the raycaster
+	ft_raycaster(data);
 	mlx_put_image_to_window(data->mlx, data->mlx_win, data->p_img, 0, 0);
 	return (0);
 }

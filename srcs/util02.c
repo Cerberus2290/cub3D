@@ -43,3 +43,11 @@ void	create_plane(t_data *data, char flag)
 		data->player->dir_x = 1;
 	}
 }
+
+void	ft_mlx_pixel_put(t_imgs *imgs, int x, int y, int color)
+{
+	int	*dest;
+
+	dest = (void *)imgs->p_img + (y * imgs->s_line + x * (imgs->bt / 8));
+	*(int *)dest = color;
+}

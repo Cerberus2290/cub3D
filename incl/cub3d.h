@@ -120,8 +120,8 @@ typedef struct l_dda
 	int		screen_x;
 	int		map_x;
 	int		map_y;
-	int		step_x;
-	int		step_y;
+	int		move_x;
+	int		move_y;
 	int		hit;
 	int		side;
 	int		line_height;
@@ -138,7 +138,7 @@ typedef struct l_dda
 	double	delta_dist_y;
 	double	wall_dist;
 	double	wall_x;
-	double	step;
+	double	move;
 	double	text_pos;
 }	t_dda;
 
@@ -228,5 +228,9 @@ int			exit_keys(int key, t_data *data);
 void		create_plane(t_data *data, char flag);
 void		update_param(t_data *data, double rot);
 int			file_convert(t_data *data, t_map *map, t_files *files);
+void		ft_mlx_pixel_put(t_imgs *imgs, int x, int y, int color);
+void		dda_calcu(t_data *data);
+void		ft_render(t_data *data);
+void		ft_raycaster(t_data *data);
 
 #endif
