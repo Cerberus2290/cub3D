@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42wolfsburg.d>  +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 13:04:16 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/09 13:04:16 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/19 11:30:46 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

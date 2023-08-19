@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   convert_colors.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42wolfsburg.d>  +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 15:11:39 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/09 13:13:34 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/19 11:36:05 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int	check_str_color(char *str)
 size_t	ft_lookup_comma(char *str, size_t start)
 {
 	size_t		end;
-	size_t		check;
+	//size_t		check;
 	static int	set;
 
 	set = 2;
@@ -44,12 +44,12 @@ size_t	ft_lookup_comma(char *str, size_t start)
 	{
 		if (str[end] == ',')
 			set--;
-		if (!ft_isspace(str[end]))
-			check = ++end;
+		/* if (!ft_isspace(str[end]))
+			check = ++end; */
 		else
 			end++;
 	}
-	return (check);
+	return (end);
 }
 
 /*splits the 3 color values and stores them in [tab]*/

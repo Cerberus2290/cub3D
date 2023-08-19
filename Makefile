@@ -10,7 +10,7 @@ HEADER		=	incl/cub3d.h
 
 LIBFT		=	-L libft -lft
 
-INCLUDE		=	-I minilibx -L mlx -lmlx -framework OpenGL -framework AppKit
+#INCLUDE		=	-I minilibx -L mlx -lmlx -framework OpenGL -framework AppKit
 
 #colors
 DEF_COLOR	=	\033[0;39m
@@ -39,19 +39,18 @@ all:		$(NAME)
 
 $(NAME):	$(OBJS)
 			@echo "\n"
-			@make all -C mlx
+			@make all -C mlx_linux
 			@make -C libft/
 			@echo "$(YELLOW)compiling cub3d...$(DEF_COLOR)"
-			@$(CC) $(CFLAGS) -o $(NAME) $(OBJS) $(INCLUDE) $(LIBFT)
+			@$(CC) $(OBJ) -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME) $(OBJS) $(INCLUDE) $(LIBFT)
 			@echo "$(GREEN)cub3d - ready to play$(DEF_COLOR)"
 
 %.o:		%.c
 				@printf "$(BLUE)creating objects for cub3d... %-33.33s\r" $@
-				@$(CC) $(CFLAGS) -c $< -o $@
+				@$(CC) -Wall -Wextra -Werror -I/usr/include -Imlx_linux -O3 -c $< -o $@
 
 fclean:
 				@echo "$(GREY)cleaning all...$(DEF_COLOR)"
-				@make clean -C mlx/
 				@make fclean -C libft/
 				@$(RM) $(OBJS)
 				@$(RM) $(NAME)
