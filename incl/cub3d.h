@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: debian-tom <debian-tom@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 11:33:24 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/19 11:47:55 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/20 16:18:44 by debian-tom       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@
 # include <time.h>
 # include "../libft/include/libft.h"	//all functions of libft
 
-# define WINDOW_W 900
-# define WINDOW_H 680
+# define WINDOW_W	900
+# define WINDOW_H	680
 
 # define ESC		53
 # define E_KEY		14
