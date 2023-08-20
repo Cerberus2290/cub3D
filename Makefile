@@ -42,7 +42,7 @@ $(NAME):	$(OBJS)
 			@make all -C mlx_linux
 			@make -C libft/
 			@echo "$(YELLOW)compiling cub3d...$(DEF_COLOR)"
-			@$(CC) $(OBJ) -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME) $(OBJS) $(INCLUDE) $(LIBFT)
+			@$(CC)  $(OBJS) -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME) $(INCLUDE) $(LIBFT)
 			@echo "$(GREEN)cub3d - ready to play$(DEF_COLOR)"
 
 %.o:		%.c
