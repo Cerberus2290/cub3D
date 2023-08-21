@@ -1,5 +1,4 @@
-
-#include "cub3d.h"
+#include "../incl/cub3d.h"
 
 int ft_error(int error_code)
 {
@@ -333,11 +332,8 @@ void	init_facing_direction(t_data *data)
 }
 
 
-int main(int ac, char **argv)
+void    ft_raycaster(t_data *data)
 {
-    t_data	*data;
-
-    (void)ac;  
     data = init_data();
 	/* + add check args */
 	/* + add check map */

@@ -7,10 +7,10 @@
 # include <math.h>
 # include <time.h>
 #include <unistd.h>
-#include "gnl/get_next_line.h"
+#include "../srcs/gnl/get_next_line.h"
 
 /*  Header file */
-typedef struct s_raycast
+/*typedef struct s_raycast
 {   
     void	*mlx;
     void    *win;
@@ -75,7 +75,7 @@ typedef struct s_data
     t_raycast *raycasting;
 
 
-}   t_data;
+}   t_data;*/
 
 #define MEMORY_ERROR    1
 #define INVALID_MAP     2
