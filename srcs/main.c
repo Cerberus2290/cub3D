@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42wolfsburg.d>  +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 10:02:17 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/15 12:10:55 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/19 11:37:31 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,11 @@ int	main(int argc, char **argv)
 	init_map(&map, data);
 	if (parsing_map(data, &map, argv))
 		free_on_exit(data);
-	mlx_mouse_move(data->mlx_win, WINDOW_W / 2, WINDOW_H / 2);
+	mlx_mouse_move(data->mlx, data->mlx_win, WINDOW_W / 2, WINDOW_H / 2);
 	data->n_sprites = ft_lstsize(data->map->item);
 	create_spawn(data);
 	create_plane(data, data->map->dir_spawn);
-	mlx_mouse_hide();
+	mlx_mouse_hide(data->mlx, data->mlx_win);
 	mlx_do_key_autorepeaton(data->mlx);
 	mlx_hook(data->mlx_win, 2, 0, handle_keys, data);
 	mlx_hook(data->mlx_win, 3, 0, exit_keys, data);
