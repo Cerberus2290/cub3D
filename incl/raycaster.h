@@ -7,7 +7,6 @@
 # include <math.h>
 # include <time.h>
 #include <unistd.h>
-#include "../srcs/gnl/get_next_line.h"
 
 /*  Header file */
 /*typedef struct s_raycast

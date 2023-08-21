@@ -17,37 +17,6 @@ int ft_error(int error_code)
 
 #define WRONG_QTY_ARGS  4
 
-t_data *init_data()
-{
-    t_data *data;
-    data = malloc(sizeof(t_data));
-	if(data == NULL)
-		ft_error(MEMORY_ERROR);
-	data->raycasting = calloc(sizeof(t_raycast), 1);
-	if (data->raycasting == NULL)
-		ft_error(MEMORY_ERROR);
-	data->mlx = mlx_init();
-	data->raycasting->mlx = data->mlx;
-	data->screen_width = 1024;
-	data->screen_heigth = 768;
-    data->sky_color = 127;
-    data->floor_color = 65;
-	/*
-	data->tex_width = 64;
-	data->tex_height = 64;
-	//initialize textures
-	*/
-
-    // POS X & POS Y
-    data->raycasting->pos_x = 1;
-    data->raycasting->pos_y = 4;
-
-    data->win = mlx_new_window(data->mlx, data->screen_width, data->screen_heigth, "cub_3d");
-	data->raycasting->win = data->win;
-
-	return (data);
-}
-
 void	my_mlx_pixel_put(t_data *data, int x, int y, int color)
 {
 	char	*dst;

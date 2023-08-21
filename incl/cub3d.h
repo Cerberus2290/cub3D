@@ -26,6 +26,7 @@
 # include <stdlib.h>					//malloc, free
 # include <time.h>
 # include "../libft/include/libft.h"	//all functions of libft
+# include "../libft/include/get_next_line.h"
 # include "../incl/raycaster.h"
 
 # define WINDOW_W	900
