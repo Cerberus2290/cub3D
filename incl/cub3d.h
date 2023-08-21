@@ -18,7 +18,6 @@
 #  include "../mlx/mlx.h"				//mlx library
 # else
 #  include "../mlx_linux/mlx.h"
-#  include "../mlx_linux/mlx_int.h"
 # endif
 # include <math.h>						//collection of mathematical functions
 # include <stdio.h>						//printf, perror, strerror
