@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incl/cub3d.h"
+#include "../incl/cub3d.h"
 
 int	render_vertical_l(t_data *data, int y, int color, int i)
 {

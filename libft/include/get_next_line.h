@@ -26,7 +26,7 @@
 # include "libft.h"
 
 size_t		ft_strlen_get(const char *s);
-char		*ft_strchr(const char *c, int i);
+char		*ft_strchr2(const char *c, int i);
 char		*ft_strjoin(char *str1, char *buffer);
 char		*ft_line_get(char *str1);
 char		*ft_line_new(char *str1);

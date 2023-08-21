@@ -24,7 +24,7 @@ size_t	ft_strlen_get(const char *s)
 	return (i);
 }
 
-char	*ft_strchr(const char *c, int i)
+char	*ft_strchr2(const char *c, int i)
 {
 	int	j;
 

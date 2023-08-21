@@ -305,8 +305,8 @@ void    ft_raycaster(t_data *data)
 {
 	data->dda->screen_x = 0;
 	while (data->dda->screen_x < WINDOW_W)
-	{
-		dda_calcu(data);
+    {
+        draw_floor_n_sky(data);
 		render_walls(data);
 		data->dda->screen_x++;
 	}

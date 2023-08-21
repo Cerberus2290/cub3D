@@ -21,7 +21,7 @@ static char	*ft_readline(int fd, char *str1)
 	if (!temp)
 		return (NULL);
 	i = 1;
-	while (!ft_strchr(str1, '\n') && i != 0)
+	while (!ft_strchr2(str1, '\n') && i != 0)
 	{
 		i = read(fd, temp, BUFFER_SIZE);
 		if (i == -1)
