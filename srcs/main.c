@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "../incl/cub3d.h"
+#include "../incl/raycaster.h"
 
 int	start_game(t_data *data)
 {
