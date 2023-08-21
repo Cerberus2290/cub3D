@@ -334,17 +334,11 @@ void	init_facing_direction(t_data *data)
 
 void    ft_raycaster(t_data *data)
 {
-    data = init_data();
-	/* + add check args */
-	/* + add check map */
-    init_map_data(data, argv[1]);
-    convert_map(data);
-    /*init_map*/   
-    
-    init_facing_direction(data);   
-    /*mlx_hooks*/
-    mlx_loop_hook(data->mlx, loop_function, data);
-	mlx_loop(data->mlx);
-
-    return (0);
+	data->dda->screen_x = 0;
+	while (data->dda->screen_x < WINDOW_W)
+	{
+		dda_calcu(data);
+		render_walls(data);
+		data->dda->screen_x++;
+	}
 }
