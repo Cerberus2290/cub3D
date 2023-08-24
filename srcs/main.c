@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 10:02:17 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/19 11:37:31 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/23 10:30:03 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/cub3d.h"
-#include "../incl/raycaster.h"
 
 int	start_game(t_data *data)
 {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_raycaster.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42wolfsburg.d>  +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 08:54:55 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/17 09:14:57 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/23 10:32:15 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	is_side(t_data *data)
 
 void	check_dist_move(t_data *data)
 {
-	if (data->dda->side_dist_x < data->dda->delta_dist_y)
+	if (data->dda->side_dist_x < data->dda->side_dist_y)
 	{
 		data->dda->side_dist_x += data->dda->delta_dist_x;
 		data->dda->map_x += data->dda->move_x;

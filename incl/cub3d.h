@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 11:33:24 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/19 11:37:50 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/23 10:29:49 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@
 # include <time.h>
 # include "../libft/include/libft.h"	//all functions of libft
 # include "../libft/include/get_next_line.h"
-# include "../incl/raycaster.h"
 
 # define WINDOW_W	900
 # define WINDOW_H	680
