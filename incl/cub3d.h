@@ -42,11 +42,6 @@
 # define UP_KEY		126
 # define DOWN_KEY	125
 
-#define MEMORY_ERROR    1
-#define INVALID_MAP     2
-#define WRONG_MAP_PATH  3
-#define WRONG_QTY_ARGS  4
-
 typedef struct s_doublell
 {
 	void				*content;
@@ -175,50 +170,6 @@ typedef struct l_map
 	char		dir_spawn;
 }	t_map;
 
-typedef struct s_raycast
-{
-    void	*mlx;
-    void    *win;
-    void    *img;
-    char    *img_address;
-    int     bits_per_pixel;
-    int     line_length;
-    int     endian;
-    double  plane_x;
-    double  plane_y;
-    double  dir_y;
-    double  dir_x;
-    double  camera_x;
-    double  pos_x;
-    double  pos_y;
-    double  deltaDistX;
-    double  deltaDistY;
-    int     hit;
-    double ray_dir_x;
-    double ray_dir_y;
-    int     step_x;
-    int     step_y;
-    double  side_dist_x;
-    double  side_dist_y;
-    int     map_x;
-    int     map_y;
-    int     side;
-    double  perp_wall_dist;
-    int     line_height;
-    int     draw_start;
-    int     draw_end;
-    int     texnum;
-    double  wallx;
-    int     texx;
-    double  step;
-    double  texpos;
-    id_t    texy;
-    int     colr;
-
-
-
-}   t_raycast;
-
 typedef struct l_data
 {
 	void		*mlx;
@@ -236,22 +187,6 @@ typedef struct l_data
 	t_map		*map;
 	t_player	*player;
 	t_dda		*dda;
-    void    *win;
-    int     screen_heigth;
-    int     screen_width;
-
-    int     sky_color;
-    int     floor_color;
-    char    *win_title;
-    char    player_direction;
-    char    **temp_map;
-    int     **imap;
-    int     tex_width;
-    int     tex_height;
-
-
-
-    t_raycast *raycasting;
 }	t_data;
 
 /* Functions of cub3d */
@@ -296,6 +231,6 @@ int			file_convert(t_data *data, t_map *map, t_files *files);
 void		ft_mlx_pixel_put(t_imgs *imgs, int x, int y, int color);
 void		dda_calcu(t_data *data);
 void		ft_render(t_data *data);
-void        ft_raycaster(t_data *data);
+void		ft_raycaster(t_data *data);
 
 #endif

@@ -96,8 +96,10 @@ void	check_side(t_data *data)
 void	dda_calcu(t_data *data)
 {
 	data->dda->cam_x = 2 * (double)data->dda->screen_x / (double)WINDOW_W - 1;
-	data->dda->ray_dir_x = data->player->dir_x + data->player->player_x * data->dda->cam_x;
-	data->dda->ray_dir_y = data->player->dir_y + data->player->player_y * data->dda->cam_x;
+	data->dda->ray_dir_x = data->player->dir_x
+		+ data->player->player_x * data->dda->cam_x;
+	data->dda->ray_dir_y = data->player->dir_y
+		+ data->player->player_y * data->dda->cam_x;
 	data->dda->map_x = (int)data->player->pos_x ;
 	data->dda->map_y = (int)data->player->pos_y;
 	data->dda->delta_dist_x = fabs(1 / data->dda->ray_dir_x);

@@ -52,6 +52,7 @@ $(NAME):	$(OBJS)
 fclean:
 				@echo "$(GREY)cleaning all...$(DEF_COLOR)"
 				@make fclean -C libft/
+				@make clean -C mlx/
 				@$(RM) $(OBJS)
 				@$(RM) $(NAME)
 				@$(RM) cub3d.dSYM
