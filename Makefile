@@ -33,8 +33,8 @@ CHECK_MAP		=	check_cub convert_colors element_map parsing_map \
 MAIN_BONUS		=	doublelst_bonus free_utils_bonus init_data_bonus main_bonus split01_bonus util01_bonus util02_bonus \
 					handle_keys_bonus update_param_bonus ft_raycaster_bonus ft_raycaster_02_bonus ft_render_bonus
 
-CHECK_MAP_BONUS	=	check_cub convert_colors element_map parsing_map \
-					read_cub read_cub_util01 read_cub_util02 take_cub
+CHECK_MAP_BONUS	=	check_cub_bonus convert_colors_bonus element_map_bonus parsing_map_bonus \
+					read_cub_bonus read_cub_util01_bonus read_cub_util02_bonus take_cub_bonus
 
 SRCS			=	$(addsuffix .c, $(addprefix srcs/, $(MAIN))) \
 					$(addsuffix .c, $(addprefix srcs/check_map/, $(CHECK_MAP))) \
@@ -43,6 +43,8 @@ SCRS_BONUS		=	$(addsuffix .c, $(addprefix srcs_bonus/, $(MAIN_BONUS))) \
 					$(addsuffix .c, $(addprefix srcs_bonus/check_map/, $(CHECK_MAP_BONUS)))
 
 OBJS			=	$(SRCS:c=o)
+
+OBJS_BONUS		=	$(SCRS_BONUS:c=o)
 
 all:			$(NAME)
 
@@ -54,6 +56,14 @@ $(NAME):		$(OBJS)
 				@$(CC)  $(OBJS) -o $(NAME) $(INCLUDE) $(LIBFT)
 				@echo "$(GREEN)cub3d - ready to play$(DEF_COLOR)"
 
+bonus:			$(OBJS_BONUS)
+				@echo "\n"
+				@make all -C mlx
+				@make -C libft/
+				@echo "$(YELLOW)compiling cub3d bonus...$(DEF_COLOR)"
+				@$(CC)  $(OBJS_BONUS) -o $(NAME) $(INCLUDE) $(LIBFT)
+				@echo "$(GREEN)cub3d - ready to play$(DEF_COLOR)"
+
 %.o:			%.c
 					@printf "$(BLUE)creating objects for cub3d... %-33.33s\r" $@
 					@$(CC) $(CFLAGS) -c $< -o $@
@@ -63,6 +73,7 @@ fclean:
 					@make fclean -C libft/
 					@make clean -C mlx/
 					@$(RM) $(OBJS)
+					@$(RM) $(OBJS_BONUS)
 					@$(RM) $(NAME)
 					@$(RM) cub3d.dSYM
 					@echo "$(GREY)Done!$(DEF_COLOR)"

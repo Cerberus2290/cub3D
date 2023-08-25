@@ -6,18 +6,18 @@
 /*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 17:08:32 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/24 11:06:07 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/24 13:30:24 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incl/cub3d.h"
+#include "../../incl/cub3d_bonus.h"
 
 /*responsible for adding items to the game map
  *also handles adding spawn points to t_map*/
 int	add_item(t_map *map, int x, int y)
 {
 	t_items		*item;
-	t_doublell	*temp;
+	t_list		*temp;
 	t_doublell	*temp02;
 
 	item = malloc(sizeof(t_items));
@@ -33,7 +33,7 @@ int	add_item(t_map *map, int x, int y)
 			return (1);
 		doublelst_addback(&map->spawn, temp02);
 	}
-	else if (is_item(map->map[y][x]))
+	else if (ft_isitem(map->map[y][x]))
 	{
 		temp = ft_lstnew(item);
 		if (!temp)

@@ -88,6 +88,7 @@ typedef struct l_sprites
 	int		draw_start_y;
 	int		draw_end_y;
 	int		sprite_width;
+	int		sprite_height;
 	int		draw_start_x;
 	int		draw_end_x;
 }	t_sprites;

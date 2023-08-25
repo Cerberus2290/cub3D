@@ -6,11 +6,11 @@
 /*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 10:02:17 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/24 11:47:16 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/24 13:21:06 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incl/cub3d.h"
+#include "../incl/cub3d_bonus.h"
 
 void	ft_put_text(t_data *data)
 {

@@ -6,7 +6,7 @@
 /*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 13:45:21 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/24 11:53:36 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/24 13:38:50 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_mouse_movement(t_data *data)
 		update_param(data, dx * (-(2 * M_PI / 11520)));
 	else if (dx < 0)
 		update_param(data, -dx * 2 * M_PI / 11520);
-	mlx_mouse_move(data->mlx_win, WINDOW_H / 2, WINDOW_H / 2);
+	mlx_mouse_move(data->mlx_win, WINDOW_W / 2, WINDOW_H / 2);
 	return (0);
 }
 

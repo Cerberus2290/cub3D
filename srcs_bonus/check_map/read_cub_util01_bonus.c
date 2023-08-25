@@ -6,11 +6,11 @@
 /*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 14:30:49 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/24 11:26:00 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/24 13:30:42 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incl/cub3d.h"
+#include "../../incl/cub3d_bonus.h"
 
 int	write_error(char *str)
 {
