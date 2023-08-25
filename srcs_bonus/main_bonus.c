@@ -6,7 +6,7 @@
 /*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 10:02:17 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/24 13:21:06 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/25 15:28:04 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	ft_put_text(t_data *data)
 	if (data->n_taken != data->n_sprites)
 		mlx_string_put(data->mlx, data->mlx_win, 800, 650, 0xffffff, s2);
 	else
-		mlx_string_put(data->mlx, data->mlx_win, 700, 650, 0xffffff, \
+		mlx_string_put(data->mlx, data->mlx_win, 450, 650, 0xffffff, \
 			"Congratulations! All bombs have been defused.");
 	free(s1);
 	free(s2);

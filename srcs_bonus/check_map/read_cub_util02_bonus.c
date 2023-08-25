@@ -6,7 +6,7 @@
 /*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 17:39:00 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/24 11:26:05 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/25 15:33:14 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	ft_isdoor(char c)
 
 int	ft_isitem(char c)
 {
-	if (c == '2')
+	if (c == 'B')
 		return (1);
 	return (0);
 }

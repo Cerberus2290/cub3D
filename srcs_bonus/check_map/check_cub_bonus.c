@@ -6,7 +6,7 @@
 /*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 17:08:32 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/24 13:30:24 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/25 16:45:00 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int	checking(t_map *map, size_t *map_len)
 			&& is_map(map->map[y + 1][x - 1])
 			&& is_map(map->map[y + 1][x]) && is_map(map->map[y + 1][x + 1])))
 				return (write_error("error: map:\nMap is not closed\n"));
-			if (is_spawn(map->map[y][x]))
+			if (is_spawn(map->map[y][x]) || ft_isitem(map->map[y][x]))
 				if (add_item(map, x, y))
 					return (1);
 			x++;

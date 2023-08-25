@@ -6,7 +6,7 @@
 /*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 10:15:02 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/24 11:30:58 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/25 16:35:39 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int	render_vertical_l(t_data *data, int y, int color, int i)
 void	set_texture(t_data *data)
 {
 	if (data->dda->side == 1 || data->dda->side == 2
-		|| data->dda->side == 12 || data->dda->side == 13)
+		|| data->dda->side == 13 || data->dda->side == 14)
 	{
 		data->dda->wall_x = data->player->pos_y
 			+ data->dda->wall_dist * data->dda->ray_dir_y;
@@ -37,7 +37,7 @@ void	set_texture(t_data *data)
 				- data->dda->text_x - 1;
 	}
 	else if (data->dda->side == 3 || data->dda->side == 4
-		|| data->dda->side == 14 || data->dda->side == 15)
+		|| data->dda->side == 15 || data->dda->side == 16)
 	{
 		data->dda->wall_x = data->player->pos_x
 			+ data->dda->wall_dist * data->dda->ray_dir_x;

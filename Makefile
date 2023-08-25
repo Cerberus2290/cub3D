@@ -31,10 +31,11 @@ CHECK_MAP		=	check_cub convert_colors element_map parsing_map \
 					read_cub read_cub_util01 read_cub_util02 take_cub
 
 MAIN_BONUS		=	doublelst_bonus free_utils_bonus init_data_bonus main_bonus split01_bonus util01_bonus util02_bonus \
-					handle_keys_bonus update_param_bonus ft_raycaster_bonus ft_raycaster_02_bonus ft_render_bonus
+					handle_keys_bonus update_param_bonus ft_raycaster_bonus ft_raycaster_02_bonus ft_render_bonus \
+					render_sprites_bonus
 
 CHECK_MAP_BONUS	=	check_cub_bonus convert_colors_bonus element_map_bonus parsing_map_bonus \
-					read_cub_bonus read_cub_util01_bonus read_cub_util02_bonus take_cub_bonus
+					read_cub_bonus read_cub_util01_bonus read_cub_util02_bonus take_cub_bonus 
 
 SRCS			=	$(addsuffix .c, $(addprefix srcs/, $(MAIN))) \
 					$(addsuffix .c, $(addprefix srcs/check_map/, $(CHECK_MAP))) \

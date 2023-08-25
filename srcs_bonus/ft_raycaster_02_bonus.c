@@ -6,7 +6,7 @@
 /*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 12:17:16 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/24 14:18:23 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/25 15:18:55 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,5 +37,5 @@ void	ft_raycaster(t_data *data)
 		data->sprites->buffer[data->dda->screen_x] = data->dda->wall_dist;
 		data->dda->screen_x++;
 	}
-	//render_sprites(data);
+	render_sprites(data);
 }

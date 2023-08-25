@@ -6,7 +6,7 @@
 /*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 08:54:55 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/24 11:25:29 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/25 16:34:08 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,16 @@ void	is_side_door(t_data *data)
 	if (!data->dda->side)
 	{
 		if (data->dda->ray_dir_x < 0)
-			data->dda->side = 12;
-		else if (data->dda->ray_dir_x > 0)
 			data->dda->side = 13;
+		else if (data->dda->ray_dir_x > 0)
+			data->dda->side = 14;
 	}
 	else if (data->dda->side == 1)
 	{
 		if (data->dda->ray_dir_y < 0)
-			data->dda->side = 14;
-		else if (data->dda->ray_dir_y > 0)
 			data->dda->side = 15;
+		else if (data->dda->ray_dir_y > 0)
+			data->dda->side = 16;
 	}
 }
 
