@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   render_sprites_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
+/*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 14:19:17 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/28 14:58:48 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/28 15:12:42 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -126,8 +126,9 @@ void	render_sprites(t_data *data)
 			data->n_taken++;
 			content->pos_x = -1;
 			content->pos_y = -1;
-			data->map->map[content->pos_x][content->pos_y] = '0';
+			data->map->map[(int)data->player->pos_x][(int)data->player->pos_y] = '0';
 		}
+		
 		if (!(content->pos_x == -1 && content->pos_y == -1))
 			draw_sprites(data, ((double)(content)->pos_y) + \
 				0.5, (double)(content)->pos_x + 0.5);
