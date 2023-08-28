@@ -6,7 +6,7 @@
 /*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 10:02:05 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/28 09:55:15 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/28 17:02:22 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,10 +89,10 @@ int	file_convert(t_data *data, t_map *map, t_files *files)
 	init_xpm(data, 10, "./resources/object_05-1.xpm");
 	init_xpm(data, 11, "./resources/object_06.xpm");
 	init_xpm(data, 12, "./resources/object_01-1.xpm");
-	init_xpm(data, 13, "./resources/door-01.xpm");
-	init_xpm(data, 14, "./resources/door-01.xpm");
-	init_xpm(data, 15, "./resources/door-01.xpm");
-	init_xpm(data, 16, "./resources/door-01.xpm");
+	init_xpm(data, 13, "./resources/door_new_01.xpm");
+	init_xpm(data, 14, "./resources/door_new_01.xpm");
+	init_xpm(data, 15, "./resources/door_new_01.xpm");
+	init_xpm(data, 16, "./resources/door_new_01.xpm");
 	if (convert_color(&map->f, files->f) || convert_color(&map->c, files->c))
 		exit(write_error("error: map:\ncolor code error\n"));
 	ft_free(files->c, files->f, files, 0);
