@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 10:38:32 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/28 12:53:59 by aputiev          ###   ########.fr       */
+/*   Updated: 2023/08/28 14:49:12 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ int		ft_mouse_movement(t_data *data);
 void	check_dist(t_data *data);
 void	check_side(t_data *data);
 void	render_sprites(t_data *data);
-void    ft_minimap(t_data *data);
+void	ft_minimap(t_data *data);
+int		create_trgb(int t, int r, int g, int b);
+int		draw_square(t_data *data, int x, int y, uint32_t color);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_minimap.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/28 12:49:18 by aputiev           #+#    #+#             */
-/*   Updated: 2023/08/28 13:47:22 by aputiev          ###   ########.fr       */
+/*   Updated: 2023/08/28 14:49:44 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void draw_back_layer(t_data *data)
 		j = 0;
 		while (j < 200)
 		{
-			if(i < 20 || j < 20 || i > 179 || j > 179)
+			if(i < 15 || j < 15 || i > 179 || j > 179)
 				ft_mlx_pixel_put(data->imgs[0], i, j, create_trgb(255, 255, 255, 255));
 			else
 				ft_mlx_pixel_put(data->imgs[0], i, j, create_trgb(0, 255, 255, 255));
@@ -70,10 +70,10 @@ size_t	ft_strstrlen(char **str)
 void ft_minimap(t_data *data)
 {
 	int	i = 0;
-	int j;
+	int j = 0;
 
 	draw_back_layer(data);
-	draw_square(data, 90, 90, create_trgb(0, 0, 255, 0));
+	draw_square(data, 100, 100, create_trgb(0, 0, 255, 0));
 	
 	//while (i < (int)ft_strstrlen(data->map->map))
 	
@@ -93,27 +93,25 @@ void ft_minimap(t_data *data)
 	///////////////////////////////////
 
 	
-	while (data->map->map[i])
+	while (data->map->map[j])
 	{
-		j = 0;
+		i = 0;
 		//while (j < (int)ft_strlen(data->map->map[i]) - 1)
-		while (data->map->map[i][j])
+		while (data->map->map[j][i])
 		{
 			//printf("========1\n");
 			if(data->player->pos_x - j < 5 && (int)data->player->pos_x - j > -4 && (int)data->player->pos_y - i< 5 && (int)data->player->pos_y - i > -4)
 			{
 				//printf("========2\n");
 				//printf("data->map->map[%d][%d]\n", j, i);
-				if(data->map->map[j][i] == '1' || data->map->map[j][i] == 'D' || data->map->map[j][i] == 'B')
-				{
-					//printf("========3\n");                   
-					//printf("Are we here?\n");
-					draw_square(data, 100 - ((int)data->player->pos_y - i) * 20, 100 - ((int)data->player->pos_x - j) * 20, (create_trgb(0,255,0,0)));
-				}
+				if (data->map->map[j][i] == '1' || data->map->map[j][i] == 'D')
+					draw_square(data, 100 - ((int)data->player->pos_x - j) * 20, 100 - ((int)data->player->pos_y - i) * 20, (create_trgb(0,255,0,0)));
+				if (data->map->map[j][i] == 'B')
+					draw_square(data, 100 - ((int)data->player->pos_x - j) * 20, 100 - ((int)data->player->pos_y - i) * 20, (create_trgb(0,0,0,255)));
 			}
-			j++;
+			i++;
 		}
-		i++;
+		j++;
 	}
 
 }

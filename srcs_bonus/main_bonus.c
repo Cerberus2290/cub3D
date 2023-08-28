@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 10:02:17 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/28 12:54:15 by aputiev          ###   ########.fr       */
+/*   Updated: 2023/08/28 14:50:53 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ int	start_game(t_data *data)
 	ft_mouse_movement(data);
 	update_param(data, data->player->rot);
 	ft_raycaster(data);
-	//render_background(data);
 	ft_minimap(data);
 	mlx_put_image_to_window(data->mlx, data->mlx_win, data->p_img, 0, 0);
 	ft_put_text(data);
