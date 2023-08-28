@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
+/*   By: debian-tom <debian-tom@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 10:02:17 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/28 15:06:47 by aputiev          ###   ########.fr       */
+/*   Updated: 2023/08/28 21:11:59 by debian-tom       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,11 +48,11 @@ int	main(int argc, char **argv)
 	init_map(&map, data);
 	if (parsing_map(data, &map, argv))
 		free_on_exit(data);
-	mlx_mouse_move(data->mlx_win, WINDOW_W / 2, WINDOW_H / 2);
+	mlx_mouse_move(data->mlx, data->mlx_win, WINDOW_W / 2, WINDOW_H / 2);
 	data->n_sprites = ft_lstsize(data->map->item);
 	create_spawn(data);
 	create_plane(data, data->map->dir_spawn);
-	mlx_mouse_hide();
+	mlx_mouse_hide(data->mlx, data->mlx_win);
 	mlx_do_key_autorepeaton(data->mlx);
 	mlx_hook(data->mlx_win, 2, 0, handle_keys, data);
 	mlx_hook(data->mlx_win, 3, 0, exit_keys, data);

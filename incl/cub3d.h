@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
+/*   By: debian-tom <debian-tom@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 11:33:24 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/28 13:09:40 by aputiev          ###   ########.fr       */
+/*   Updated: 2023/08/28 21:38:45 by debian-tom       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,13 @@
 # define CUB3D_H
 
 //Definition - includes / standard libs
-# ifdef __APPLE__
-#  include "../mlx/mlx.h"				//mlx library
-# else
-#  include "../mlx_linux/mlx.h"
-# endif
+# include "../mlx_linux/mlx.h"
 # include <math.h>						//collection of mathematical functions
 # include <stdio.h>						//printf, perror, strerror
 # include <fcntl.h>						//open
 # include <unistd.h>					//close
 # include <stdlib.h>					//malloc, free
+# include <stdint.h>
 # include <time.h>
 # include "../libft/include/libft.h"	//all functions of libft
 # include "../libft/include/get_next_line.h"
@@ -41,6 +38,8 @@
 # define RIGHT_KEY	124
 # define UP_KEY		126
 # define DOWN_KEY	125
+
+# define M_PI 3.14159265358979323846
 
 typedef struct s_doublell
 {

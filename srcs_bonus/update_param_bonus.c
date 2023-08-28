@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   update_param_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
+/*   By: debian-tom <debian-tom@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 13:45:21 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/24 13:38:50 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/28 21:37:22 by debian-tom       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,13 @@ int	ft_mouse_movement(t_data *data)
 	int	y;
 	int	dx;
 
-	mlx_mouse_get_pos(data->mlx_win, &x, &y);
+	mlx_mouse_get_pos(data->mlx, data->mlx_win, &x, &y);
 	dx = x - WINDOW_W / 2;
 	if (dx > 0)
 		update_param(data, dx * (-(2 * M_PI / 11520)));
 	else if (dx < 0)
 		update_param(data, -dx * 2 * M_PI / 11520);
-	mlx_mouse_move(data->mlx_win, WINDOW_W / 2, WINDOW_H / 2);
+	mlx_mouse_move(data->mlx_win, data->mlx_win, WINDOW_W / 2, WINDOW_H / 2);
 	return (0);
 }
 

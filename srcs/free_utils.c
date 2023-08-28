@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   free_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
+/*   By: debian-tom <debian-tom@student.42.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 13:04:16 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/28 15:14:24 by aputiev          ###   ########.fr       */
+/*   Updated: 2023/08/28 21:16:53 by debian-tom       ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	free_on_exit(t_data *data)
 	t_list	*temp01;
 	t_list	*temp02;
 
-	mlx_destroy_window(data->mlx, data->mlx_win);
+	mlx_destroy_display(data->mlx);
 	temp01 = data->map->item;
 	while (temp01)
 	{
