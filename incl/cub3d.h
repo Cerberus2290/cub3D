@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
+/*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 11:33:24 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/23 10:29:49 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/28 13:09:40 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -165,6 +165,7 @@ typedef struct l_map
 
 	int			f;
 	int			c;
+	int			**imap;
 	t_doublell	*spawn;
 	t_list		*item;
 

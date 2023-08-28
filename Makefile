@@ -32,7 +32,7 @@ CHECK_MAP		=	check_cub convert_colors element_map parsing_map \
 
 MAIN_BONUS		=	doublelst_bonus free_utils_bonus init_data_bonus main_bonus split01_bonus util01_bonus util02_bonus \
 					handle_keys_bonus update_param_bonus ft_raycaster_bonus ft_raycaster_02_bonus ft_render_bonus \
-					render_sprites_bonus
+					render_sprites_bonus ft_minimap
 
 CHECK_MAP_BONUS	=	check_cub_bonus convert_colors_bonus element_map_bonus parsing_map_bonus \
 					read_cub_bonus read_cub_util01_bonus read_cub_util02_bonus take_cub_bonus 
