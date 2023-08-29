@@ -6,7 +6,7 @@
 /*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 10:02:05 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/28 17:02:22 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/29 15:51:16 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,11 +35,7 @@ int	all_face(t_files *files)
 {
 	if (!files->f1 || !files->f2 || !files->f3
 		|| !files->f4 || !files->f5 || !files->f6)
-	{
-		ft_free(files->north, files->south, files-> west, files->east);
-		ft_free(files->c, files->f, files, 0);
-		return (1);
-	}
+		exit(write_error("error: map file:\nmissing information\n"));
 	return (0);
 }
 

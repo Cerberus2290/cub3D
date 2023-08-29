@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_cub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42wolfsburg.d>  +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 17:08:32 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/09 13:12:37 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/29 15:29:06 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ int	checking(t_map *map, size_t *map_len)
 			&& map->map[y + 1] && map_len[y + 1] >= x
 			&& is_map(map->map[y + 1][x - 1])
 			&& is_map(map->map[y + 1][x]) && is_map(map->map[y + 1][x + 1])))
-				return (write_error("error: map:\nMap is not closed\n"));
+				exit(write_error("error: map:\nMap is not closed\n"));
 			if (is_spawn(map->map[y][x]))
 				if (add_item(map, x, y))
 					return (1);
@@ -78,7 +78,7 @@ int	cpl_map_len(char **map, size_t **map_len)
 		while (map[y][x])
 		{
 			if (!(is_map(map[y][x]) || map[y][x] == 32 || map[y][x] == '\n'))
-				return (write_error("error: map:\nBad map element\n"));
+				exit(write_error("error: map:\nBad map element\n"));
 			x++;
 		}
 		(*map_len)[y] = x;
@@ -95,7 +95,7 @@ int	check_cub(t_map *map)
 
 	map_len = malloc(sizeof(size_t) * map->map_len);
 	if (!map_len)
-		return (write_error("error: map:\nNo map found\n"));
+		exit(write_error("error: map:\nNo map found\n"));
 	if (cpl_map_len(map->map, &map_len))
 	{
 		free(map_len);
@@ -109,7 +109,7 @@ int	check_cub(t_map *map)
 	if (!map->spawn)
 	{
 		free(map_len);
-		return (write_error("error: map:\nNo place to spawn\n"));
+		exit(write_error("error: map:\nNo place to spawn\n"));
 	}
 	free(map_len);
 	return (0);

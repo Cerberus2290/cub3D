@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 10:02:17 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/28 15:06:47 by aputiev          ###   ########.fr       */
+/*   Updated: 2023/08/29 15:28:29 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	main(int argc, char **argv)
 	t_map	map;
 
 	if (argc != 2)
-		return (write_error("error: syntax:\n use: ./cub3d maps/<map>.cub\n"));
+		exit(write_error("error: syntax:\n use: ./cub3d maps/<map>.cub\n"));
 	data = malloc(sizeof(t_data));
 	if (!data)
 		exit(write_error("error: malloc:\n failed to allocate memory\n"));
