@@ -6,11 +6,11 @@
 /*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 13:45:21 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/24 13:38:50 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/29 16:21:49 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incl/cub3d.h"
+#include "../incl/cub3d_bonus.h"
 
 int	ft_mouse_movement(t_data *data)
 {

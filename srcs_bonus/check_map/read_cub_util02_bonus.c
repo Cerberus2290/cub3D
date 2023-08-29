@@ -6,11 +6,11 @@
 /*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 17:39:00 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/25 15:33:14 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/29 16:20:35 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incl/cub3d.h"
+#include "../../incl/cub3d_bonus.h"
 
 int	is_map(char c)
 {

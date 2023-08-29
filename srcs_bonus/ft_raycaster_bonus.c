@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_raycaster_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 08:54:55 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/28 15:13:13 by aputiev          ###   ########.fr       */
+/*   Updated: 2023/08/29 16:21:16 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incl/cub3d.h"
+#include "../incl/cub3d_bonus.h"
 
 void	is_side_door(t_data *data)
 {

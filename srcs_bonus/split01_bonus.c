@@ -6,11 +6,11 @@
 /*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 14:53:14 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/29 14:21:56 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/29 16:21:44 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incl/cub3d.h"
+#include "../incl/cub3d_bonus.h"
 
 static int	ft_count_words(const char *str, char c)
 {

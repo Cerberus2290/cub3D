@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   util01_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 14:41:33 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/28 15:13:33 by aputiev          ###   ########.fr       */
+/*   Updated: 2023/08/29 16:21:53 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incl/cub3d.h"
+#include "../incl/cub3d_bonus.h"
 
 static void	free_join(void *s1, void *s2, int i)
 {

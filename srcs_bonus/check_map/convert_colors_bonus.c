@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   convert_colors.c                                   :+:      :+:    :+:   */
+/*   convert_colors_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42wolfsburg.    +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 15:11:39 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/19 11:36:05 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/29 16:20:55 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incl/cub3d.h"
+#include "../../incl/cub3d_bonus.h"
 
 /*goes through the string of the color input*/
 int	check_str_color(char *str)

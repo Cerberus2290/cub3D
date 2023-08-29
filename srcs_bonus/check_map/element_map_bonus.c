@@ -6,11 +6,11 @@
 /*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 14:18:22 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/29 15:29:38 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/29 16:20:50 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incl/cub3d.h"
+#include "../../incl/cub3d_bonus.h"
 
 /*determines the type of elements encountered while parsing the map file*/
 int	element_type(char *str, size_t i)
