@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   read_cub_util02.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42wolfsburg.d>  +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 17:39:00 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/09 13:17:50 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/29 11:26:44 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	is_map(char c)
 {
-	if (c == '1' || is_spawn(c) || within_map(c))
+	if (c == '1')
 		return (1);
 	return (0);
 }
