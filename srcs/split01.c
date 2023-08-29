@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   split01.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 14:53:14 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/28 15:14:45 by aputiev          ###   ########.fr       */
+/*   Updated: 2023/08/29 14:20:19 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ static char	**ft_create_tab(char **tab, const char *str, char c)
 	int	start;
 	int	flag;
 
-	init(&i, &count, &start, &flag);
+	init(&count, &i, &start, &flag);
 	while (str[i])
 	{
 		if (str[i] == c && flag == 0 && ++flag)
@@ -91,7 +91,7 @@ char	**split01(char const *str, char c)
 
 	if (!str)
 		return (0);
-	tab = malloc(sizeof(char *) * (ft_count_words(str, c) + 1));
+	tab = malloc(sizeof(char *) * (ft_count_words(str, c) + 2));
 	if (!tab)
 		return (NULL);
 	return (ft_create_tab(tab, str, c));

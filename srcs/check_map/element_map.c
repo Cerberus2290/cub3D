@@ -6,7 +6,7 @@
 /*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 14:18:22 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/29 11:20:42 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/29 11:50:22 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,11 @@ int	element_type(char *str, size_t i)
 	else if (is_map(str[i]))
 		return (7);
 	else
-		return (0);
+		//return (0);
+	{
+		write_error("Error\n");
+		exit (0);
+	}
 }
 
 /*stores data associated with different directions in the map file*/

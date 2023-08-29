@@ -1,8 +1,8 @@
 NAME			=	cub3d
 
-CC				=	cc
+CC				=	gcc
 
-CFLAGS			=	-g -Wall -Wextra -Werror
+CFLAGS			=	-g -Wall -Wextra -Werror -fsanitize=address
 
 RM				=	rm -rf
 
@@ -10,7 +10,7 @@ HEADER			=	incl/cub3d.h
 
 LIBFT			=	-L libft -lft
 
-INCLUDE			=	-I minilibx -L mlx -lmlx -framework OpenGL -framework AppKit
+INCLUDE			=	-I minilibx -L mlx -lmlx -framework OpenGL -framework AppKit -fsanitize=address
 
 #colors
 DEF_COLOR		=	\033[0;39m

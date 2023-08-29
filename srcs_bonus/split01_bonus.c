@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   split01.c                                          :+:      :+:    :+:   */
+/*   split01_bonus.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42wolfsburg.d>  +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 14:53:14 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/07 14:54:20 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/29 14:21:56 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ char	**split01(char const *str, char c)
 
 	if (!str)
 		return (0);
-	tab = malloc(sizeof(char *) * (ft_count_words(str, c) + 1));
+	tab = malloc(sizeof(char *) * (ft_count_words(str, c) + 2));
 	if (!tab)
 		return (NULL);
 	return (ft_create_tab(tab, str, c));
