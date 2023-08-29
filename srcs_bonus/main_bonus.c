@@ -6,7 +6,7 @@
 /*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 10:02:17 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/29 15:21:16 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/29 16:15:34 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,16 +63,10 @@ int	main(int argc, char **argv)
 	t_map	map;
 
 	if (argc != 2)
-	{
-		write_error("error: syntax:\n use: ./cub3d maps/<map>.cub\n");
-		exit(0);
-	}
+		exit(write_error("error: syntax:\n use: ./cub3d maps/<map>.cub\n"));
 	data = malloc(sizeof(t_data));
 	if (!data)
-	{
-		write_error("error: malloc:\n failed to allocate memory\n");
-		exit(0);
-	}
+		exit(write_error("error: malloc:\n failed to allocate memory\n"));
 	data->mlx = mlx_init();
 	if (init_data(data))
 		return (1);
