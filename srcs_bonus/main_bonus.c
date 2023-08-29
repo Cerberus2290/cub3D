@@ -45,7 +45,6 @@ int	start_game(t_data *data)
 	return (0);
 }
 
-
 void	init_map(t_map *map, t_data *data)
 {
 	map->spawn = 0;

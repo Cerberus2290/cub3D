@@ -47,22 +47,26 @@ void	frame_timer(t_data *data, double x, double y)
 			data->time->tmp = (int)(ceil(time));
 		}
 	}
-	data->sprites->invdent = 1.0 / (data->player->player_x * data->player->dir_y - \
-		data->player->dir_x * data->player->player_y);
-	data->sprites->transf_x = (1.0 / (data->player->player_x * data->player->dir_y - \
-		data->player->dir_x * data->player->player_y)) * (data->player->dir_y * \
-			(x - data->player->pos_x) - data->player->dir_x * (y - data->player->pos_y));
+	data->sprites->invdent = 1.0 / (data->player->player_x \
+		* data->player->dir_y - data->player->dir_x * data->player->player_y);
+	data->sprites->transf_x = (1.0 / (data->player->player_x \
+		* data->player->dir_y - data->player->dir_x * data->player->player_y)) \
+		* (data->player->dir_y * (x - data->player->pos_x) \
+		- data->player->dir_x * (y - data->player->pos_y));
 }
 
 void	sprites_calc(t_data *data, double x, double y)
 {
-	data->sprites->transf_y = (1.0 / (data->player->player_x * data->player->dir_y - data->player->dir_x \
-		* data->player->player_y)) * (-data->player->player_y * (x - data->player->pos_x) \
-			+ data->player->player_x * (y - data->player->pos_y));
+	data->sprites->transf_y = (1.0 / (data->player->player_x \
+		* data->player->dir_y - data->player->dir_x \
+		* data->player->player_y)) * \
+		(-data->player->player_y * (x - data->player->pos_x) \
+		+ data->player->player_x * (y - data->player->pos_y));
 	data->sprites->v_movescreen = 120 / data->sprites->transf_y;
 	data->sprites->spritescreen_x = (int)((WINDOW_W / 2) * \
 		(1 + data->sprites->transf_x / data->sprites->transf_y));
-	data->sprites->sprite_height = abs((int)(WINDOW_H / (data->sprites->transf_y))) / 3;
+	data->sprites->sprite_height = \
+	abs((int)(WINDOW_H / (data->sprites->transf_y))) / 3;
 	data->sprites->draw_start_y = -data->sprites->sprite_height / 2 + \
 		WINDOW_H / 2 + data->sprites->v_movescreen;
 	if (data->sprites->draw_start_y < 0)
@@ -71,11 +75,14 @@ void	sprites_calc(t_data *data, double x, double y)
 		WINDOW_H / 2 + data->sprites->v_movescreen;
 	if (data->sprites->draw_end_y >= WINDOW_H)
 		data->sprites->draw_end_y = WINDOW_H - 1;
-	data->sprites->sprite_width = abs((int)(WINDOW_H / (data->sprites->transf_y))) / 3;
-	data->sprites->draw_start_x = -data->sprites->sprite_width / 2 + data->sprites->spritescreen_x;
+	data->sprites->sprite_width = \
+	abs((int)(WINDOW_H / (data->sprites->transf_y))) / 3;
+	data->sprites->draw_start_x = \
+	-data->sprites->sprite_width / 2 + data->sprites->spritescreen_x;
 	if (data->sprites->draw_start_x < 0)
 		data->sprites->draw_start_x = 0;
-	data->sprites->draw_end_x = data->sprites->sprite_width / 2 + data->sprites->spritescreen_x;
+	data->sprites->draw_end_x = \
+	data->sprites->sprite_width / 2 + data->sprites->spritescreen_x;
 	if (data->sprites->draw_end_x >= WINDOW_W)
 		data->sprites->draw_end_x = WINDOW_W - 1;
 	data->sprites->stripe = data->sprites->draw_start_x;
@@ -126,9 +133,9 @@ void	render_sprites(t_data *data)
 			data->n_taken++;
 			content->pos_x = -1;
 			content->pos_y = -1;
-			data->map->map[(int)data->player->pos_x][(int)data->player->pos_y] = '0';
+			data->map->map[(int)data->player->pos_x] \
+			[(int)data->player->pos_y] = '0';
 		}
-		
 		if (!(content->pos_x == -1 && content->pos_y == -1))
 			draw_sprites(data, ((double)(content)->pos_y) + \
 				0.5, (double)(content)->pos_x + 0.5);

@@ -69,6 +69,12 @@ bonus:			$(OBJS_BONUS)
 					@printf "$(BLUE)creating objects for cub3d... %-33.33s\r" $@
 					@$(CC) $(CFLAGS) -c $< -o $@
 
+norm:
+				@echo "$(CYAN)Checking the Norm..."
+				@sleep 1
+				@norminette srcs/ srcs_bonus/ incl/
+				@echo "$(DEF_COLOR)"
+
 fclean:
 					@echo "$(GREY)cleaning all...$(DEF_COLOR)"
 					@make fclean -C libft/
