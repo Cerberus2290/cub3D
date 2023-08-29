@@ -25,5 +25,9 @@ void	ft_minimap(t_data *data);
 int		create_trgb(int t, int r, int g, int b);
 int		draw_square(t_data *data, int x, int y, uint32_t color);
 void	draw_back_layer(t_data *data);
+void	create_sprite(t_data *data, int y);
+void	frame_timer(t_data *data, double x, double y);
+void	calculate_sprite_screen_coords(t_data *data, double x, double y);
+void	set_sprite_stripe(t_data *data);
 
 #endif
