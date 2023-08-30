@@ -6,7 +6,7 @@
 /*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 10:44:30 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/29 19:21:57 by aputiev          ###   ########.fr       */
+/*   Updated: 2023/08/30 11:00:27 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void	create_plane(t_data *data, char flag)
 	}
 }
 
+/* calculates each pixel */
 void	ft_mlx_pixel_put(t_imgs *imgs, int x, int y, int color)
 {
 	int	*dest;

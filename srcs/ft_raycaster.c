@@ -6,12 +6,13 @@
 /*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 08:54:55 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/28 15:14:30 by aputiev          ###   ########.fr       */
+/*   Updated: 2023/08/30 10:55:28 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/cub3d.h"
 
+/* Check which side we hit */
 void	is_side(t_data *data)
 {
 	data->dda->hit = 1;
@@ -31,6 +32,7 @@ void	is_side(t_data *data)
 	}
 }
 
+/* Chechs how far the wall is when we move */
 void	check_dist_move(t_data *data)
 {
 	if (data->dda->side_dist_x < data->dda->side_dist_y)
@@ -49,6 +51,7 @@ void	check_dist_move(t_data *data)
 		is_side(data);
 }
 
+/* Checks how far the wall when hit */
 void	check_dist(t_data *data)
 {
 	data->dda->hit = 0;
@@ -65,6 +68,7 @@ void	check_dist(t_data *data)
 			(1 - data->dda->move_y) / 2) / data->dda->ray_dir_y;
 }
 
+/* calc side */
 void	check_side(t_data *data)
 {
 	if (data->dda->ray_dir_x < 0)

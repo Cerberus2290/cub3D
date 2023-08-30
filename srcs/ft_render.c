@@ -6,12 +6,13 @@
 /*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 19:28:58 by aputiev           #+#    #+#             */
-/*   Updated: 2023/08/29 19:29:03 by aputiev          ###   ########.fr       */
+/*   Updated: 2023/08/30 11:05:24 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/cub3d.h"
 
+/* draw ceiling / floor */
 int	render_vertical_l(t_data *data, int y, int color, int i)
 {
 	while (i < y)
@@ -22,6 +23,7 @@ int	render_vertical_l(t_data *data, int y, int color, int i)
 	return (i);
 }
 
+/* calculate pos of pxl of texture */
 void	set_texture(t_data *data)
 {
 	if (data->dda->side == 1 || data->dda->side == 2)
@@ -48,6 +50,7 @@ void	set_texture(t_data *data)
 	}
 }
 
+/* calculate color of each pxl */
 int	get_pixel(t_imgs *imgs, int x, int y)
 {
 	int	*dest;
@@ -59,6 +62,7 @@ int	get_pixel(t_imgs *imgs, int x, int y)
 	return (color);
 }
 
+/* render texture */
 int	render_texture(t_data *data, int y)
 {
 	int	i;
@@ -84,6 +88,7 @@ int	render_texture(t_data *data, int y)
 	return (i);
 }
 
+/* render function */
 void	ft_render(t_data *data)
 {
 	int	i;
