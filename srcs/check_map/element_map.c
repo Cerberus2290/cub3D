@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   element_map.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42wolfsburg.d>  +#+  +:+       +#+        */
+/*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 14:18:22 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/09 13:15:17 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/29 17:15:40 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,19 +15,19 @@
 /*determines the type of elements encountered while parsing the map file*/
 int	element_type(char *str, size_t i)
 {
-	if (!ft_strncmp("NO ", &str[i], 2))
+	if (!ft_strncmp("NO ", str, 3))
 		return (1);
-	else if (!ft_strncmp("SO ", &str[i], 2))
+	else if (!ft_strncmp("SO ", &str[i], 3))
 		return (2);
-	else if (!ft_strncmp("WE ", &str[i], 2))
+	else if (!ft_strncmp("WE ", &str[i], 3))
 		return (3);
-	else if (!ft_strncmp("EA ", &str[i], 2))
+	else if (!ft_strncmp("EA ", &str[i], 3))
 		return (4);
-	else if (!ft_strncmp("F ", &str[i], 1))
+	else if (!ft_strncmp("F ", &str[i], 2))
 		return (5);
-	else if (!ft_strncmp("C ", &str[i], 1))
+	else if (!ft_strncmp("C ", &str[i], 2))
 		return (6);
-	else if (is_map(str[i]))
+	else if (is_map_beginning(str))
 		return (7);
 	else
 		return (0);
@@ -56,7 +56,10 @@ int	face_cpl(t_files *files, char *str, size_t start, int face)
 	if ((face == 1 && !files->north) || (face == 2 && !files->south)
 		|| (face == 3 && !files->west) || (face == 4 && !files->east)
 		|| (face == 5 && !files->f) || (face == 6 && !files->c))
-		return (write_error("error: map:\nerror with directions\n"));
+	{
+		write_error("error: map:\nerror with directions\n");
+		exit(0);
+	}
 	return (0);
 }
 
@@ -74,7 +77,10 @@ int	face_map(t_files *files, char *str, size_t i)
 		return (0);
 	face = element_type(str, i);
 	if (face == 0)
-		return (write_error("error: map:\nfound unrecognized element\n"));
+	{
+		write_error("error: map:\nfound unrecognized element\n");
+		exit(0);
+	}
 	else if (face == 7)
 		return (2);
 	while (str[i] && str[i] != 32)

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   read_cub_util02.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42wolfsburg.d>  +#+  +:+       +#+        */
+/*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 17:39:00 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/09 13:17:50 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/29 17:10:58 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,4 +27,21 @@ void	ft_tab_len(t_files *files, char **tab)
 	while (tab[i])
 		i++;
 	files->tab_len = i - files->map_begin;
+}
+
+int	is_map_beginning(char *str)
+{
+	int	i;
+
+	i = 0;
+	if (str[0] == '1')
+		return (1);
+	while ((str[i] == ' ' || str[i] == '\t' || str[i] == '1' )
+		&& (str[i] != '\0' && str[i] != '\n'))
+	{
+		if (str[i] == '1')
+			return (1);
+		i++;
+	}
+	return (0);
 }

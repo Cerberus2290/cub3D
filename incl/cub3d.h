@@ -6,7 +6,7 @@
 /*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 11:33:24 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/28 13:09:40 by aputiev          ###   ########.fr       */
+/*   Updated: 2023/08/29 17:07:57 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -234,5 +234,6 @@ void		ft_mlx_pixel_put(t_imgs *imgs, int x, int y, int color);
 void		dda_calcu(t_data *data);
 void		ft_render(t_data *data);
 void		ft_raycaster(t_data *data);
+int			is_map_beginning(char *str);
 
 #endif

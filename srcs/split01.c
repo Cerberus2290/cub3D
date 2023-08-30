@@ -6,7 +6,7 @@
 /*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 14:53:14 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/28 15:14:45 by aputiev          ###   ########.fr       */
+/*   Updated: 2023/08/29 17:17:31 by aputiev          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,7 +91,7 @@ char	**split01(char const *str, char c)
 
 	if (!str)
 		return (0);
-	tab = malloc(sizeof(char *) * (ft_count_words(str, c) + 1));
+	tab = malloc(sizeof(char *) * (ft_count_words(str, c) + 2));
 	if (!tab)
 		return (NULL);
 	return (ft_create_tab(tab, str, c));
