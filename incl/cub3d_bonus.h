@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/24 10:38:32 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/29 17:38:57 by aputiev          ###   ########.fr       */
+/*   Updated: 2023/08/30 09:42:47 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,10 @@ void	ft_minimap(t_data *data);
 int		create_trgb(int t, int r, int g, int b);
 int		draw_square(t_data *data, int x, int y, uint32_t color);
 void	draw_back_layer(t_data *data);
-<<<<<<< HEAD
+void	calculate_sprite_screen_coords(t_data *data, double x, double y);
 void	calculate_sprite_dimensions(t_data *data);
 void	frame_timer(t_data *data, double x, double y);
 void	sprites_calc(t_data *data, double x, double y);
-void	calculate_sprite_screen_coords(t_data *data, double x, double y);
-=======
 void	create_sprite(t_data *data, int y);
-void	frame_timer(t_data *data, double x, double y);
-void	calculate_sprite_screen_coords(t_data *data, double x, double y);
-void	set_sprite_stripe(t_data *data);
->>>>>>> 07c3aa1cded6422bcd7216a0c68d176777a86d17
 
 #endif

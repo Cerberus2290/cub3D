@@ -2,11 +2,7 @@ NAME			=	cub3D
 
 CC				=	gcc
 
-<<<<<<< HEAD
 CFLAGS			=	-g -Wall -Wextra -Werror #-fsanitize=address
-=======
-CFLAGS			=	-g -Wall -Wextra -Werror -fsanitize=address
->>>>>>> 07c3aa1cded6422bcd7216a0c68d176777a86d17
 
 RM				=	rm -rf
 
@@ -14,11 +10,7 @@ HEADER			=	incl/cub3d.h
 
 LIBFT			=	-L libft -lft
 
-<<<<<<< HEAD
 INCLUDE			=	-I minilibx -L mlx -lmlx -framework OpenGL -framework AppKit #-fsanitize=address
-=======
-INCLUDE			=	-I minilibx -L mlx -lmlx -framework OpenGL -framework AppKit -fsanitize=address
->>>>>>> 07c3aa1cded6422bcd7216a0c68d176777a86d17
 
 #colors
 DEF_COLOR		=	\033[0;39m
@@ -40,11 +32,7 @@ CHECK_MAP		=	check_cub convert_colors element_map parsing_map \
 
 MAIN_BONUS		=	doublelst_bonus free_utils_bonus init_data_bonus main_bonus split01_bonus util01_bonus util02_bonus \
 					handle_keys_bonus update_param_bonus ft_raycaster_bonus ft_raycaster_02_bonus ft_render_bonus \
-<<<<<<< HEAD
-					render_sprites_bonus render_sprites_bonus_02 ft_minimap_bonus ft_minimap_02_bonus
-=======
 					render_sprites_bonus render_sprites_02_bonus ft_minimap_bonus ft_minimap_02_bonus
->>>>>>> 07c3aa1cded6422bcd7216a0c68d176777a86d17
 
 CHECK_MAP_BONUS	=	check_cub_bonus convert_colors_bonus element_map_bonus parsing_map_bonus \
 					read_cub_bonus read_cub_util01_bonus read_cub_util02_bonus take_cub_bonus 

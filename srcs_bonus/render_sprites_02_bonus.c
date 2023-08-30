@@ -3,14 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   render_sprites_02_bonus.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/29 11:00:52 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/29 11:04:58 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/30 09:45:07 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../incl/cub3d_bonus.h"
+
+void	set_sprite_stripe(t_data *data)
+{
+	data->sprites->stripe = data->sprites->draw_start_x;
+}
 
 void	sprites_calc(t_data *data, double x, double y)
 {
@@ -26,54 +31,53 @@ void	draw_sprites_calc(t_data *data)
 		data->sprites->sprite_width) / 256;
 }
 
-void	draw_sprites(t_data *data, double x, double y)
+void	frame_timer(t_data *data, double x, double y)
 {
-	int	i;
+	clock_t	end;
+	double	time;
 
-	frame_timer(data, x, y);
-	sprites_calc(data, x, y);
-	while (++data->sprites->stripe < data->sprites->draw_end_x)
+	end = clock();
+	time = (double)(end - data->time->start) / CLOCKS_PER_SEC;
+	if (data->time->n_frame == 12)
+		data->time->n_frame = 6;
+	if ((int)(ceil(time)) % 1 == 0 && data->time->n_frame != 12)
 	{
-		draw_sprites_calc(data);
-		if (data->sprites->transf_y > 0 && data->sprites->stripe > 0 && \
-			data->sprites->stripe < WINDOW_W && data->sprites->transf_y \
-			< data->sprites->buffer[data->sprites->stripe])
+		if (data->time->tmp != (int)(ceil(time)))
 		{
-			y = data->sprites->draw_start_y;
-			while (++y < data->sprites->draw_end_y)
-			{
-				i = (y - data->sprites->v_movescreen) * 256 - WINDOW_H \
-					* 128 + data->sprites->sprite_height * 128;
-				data->sprites->texture_y = ((i * \
-					data->imgs[data->time->n_frame]->height) / \
-						data->sprites->sprite_height) / 256;
-				create_sprite(data, y);
-			}
+			data->time->n_frame++;
+			data->time->tmp = (int)(ceil(time));
 		}
 	}
+	data->sprites->invdent = 1.0 / (data->player->player_x \
+		* data->player->dir_y - data->player->dir_x * data->player->player_y);
+	data->sprites->transf_x = (1.0 / (data->player->player_x \
+		* data->player->dir_y - data->player->dir_x * data->player->player_y)) \
+		* (data->player->dir_y * (x - data->player->pos_x) \
+		- data->player->dir_x * (y - data->player->pos_y));
 }
 
-void	render_sprites(t_data *data)
+void	calculate_sprite_dimensions(t_data *data)
 {
-	t_list	*temp;
-	t_items	*content;
-
-	temp = data->map->item;
-	while (temp)
-	{
-		content = (t_items *)temp->content;
-		if (content->pos_y == (int)data->player->pos_x && \
-			content->pos_x == (int)data->player->pos_y)
-		{
-			data->n_taken++;
-			content->pos_x = -1;
-			content->pos_y = -1;
-			data->map->map[(int)data->player->pos_x] \
-			[(int)data->player->pos_y] = '0';
-		}
-		if (!(content->pos_x == -1 && content->pos_y == -1))
-			draw_sprites(data, ((double)(content)->pos_y) + \
-				0.5, (double)(content)->pos_x + 0.5);
-		temp = temp->next;
-	}
+	data->sprites->sprite_height = \
+		abs((int)(WINDOW_H / (data->sprites->transf_y))) / 3;
+	data->sprites->draw_start_y = \
+		-data->sprites->sprite_height / 2 \
+		+ WINDOW_H / 2 + data->sprites->v_movescreen;
+	if (data->sprites->draw_start_y < 0)
+		data->sprites->draw_start_y = 0;
+	data->sprites->draw_end_y = \
+		data->sprites->sprite_height / 2 \
+		+ WINDOW_H / 2 + data->sprites->v_movescreen;
+	if (data->sprites->draw_end_y >= WINDOW_H)
+		data->sprites->draw_end_y = WINDOW_H - 1;
+	data->sprites->sprite_width = \
+		abs((int)(WINDOW_H / (data->sprites->transf_y))) / 3;
+	data->sprites->draw_start_x = \
+		-data->sprites->sprite_width / 2 + data->sprites->spritescreen_x;
+	if (data->sprites->draw_start_x < 0)
+		data->sprites->draw_start_x = 0;
+	data->sprites->draw_end_x = \
+		data->sprites->sprite_width / 2 + data->sprites->spritescreen_x;
+	if (data->sprites->draw_end_x >= WINDOW_W)
+		data->sprites->draw_end_x = WINDOW_W - 1;
 }

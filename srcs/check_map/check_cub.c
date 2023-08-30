@@ -3,17 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_cub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-<<<<<<< HEAD
-/*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/02 17:08:32 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/29 17:16:49 by aputiev          ###   ########.fr       */
-=======
 /*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 17:08:32 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/29 15:29:06 by tstrassb         ###   ########.fr       */
->>>>>>> 07c3aa1cded6422bcd7216a0c68d176777a86d17
+/*   Updated: 2023/08/30 09:25:45 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,14 +78,7 @@ int	cpl_map_len(char **map, size_t **map_len)
 		while (map[y][x])
 		{
 			if (!(is_map(map[y][x]) || map[y][x] == 32 || map[y][x] == '\n'))
-<<<<<<< HEAD
-			{
-				write_error("error: map:\nBad map element\n");
-				exit(0);
-			}
-=======
 				exit(write_error("error: map:\nBad map element\n"));
->>>>>>> 07c3aa1cded6422bcd7216a0c68d176777a86d17
 			x++;
 		}
 		(*map_len)[y] = x;
@@ -124,10 +110,6 @@ int	check_cub(t_map *map)
 	{
 		free(map_len);
 		exit(write_error("error: map:\nNo place to spawn\n"));
-<<<<<<< HEAD
-		exit(0);
-=======
->>>>>>> 07c3aa1cded6422bcd7216a0c68d176777a86d17
 	}
 	free(map_len);
 	return (0);
