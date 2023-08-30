@@ -3,14 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   read_cub_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
+<<<<<<< HEAD
 /*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 13:56:41 by tstrassb          #+#    #+#             */
 /*   Updated: 2023/08/29 17:04:05 by aputiev          ###   ########.fr       */
+=======
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/02 13:56:41 by tstrassb          #+#    #+#             */
+/*   Updated: 2023/08/29 16:20:41 by tstrassb         ###   ########.fr       */
+>>>>>>> 07c3aa1cded6422bcd7216a0c68d176777a86d17
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incl/cub3d.h"
+#include "../../incl/cub3d_bonus.h"
 
 int	read_cub(char **str, int fd)
 {

@@ -6,11 +6,15 @@
 /*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 17:39:00 by tstrassb          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2023/08/29 17:21:10 by aputiev          ###   ########.fr       */
+=======
+/*   Updated: 2023/08/29 16:20:35 by tstrassb         ###   ########.fr       */
+>>>>>>> 07c3aa1cded6422bcd7216a0c68d176777a86d17
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incl/cub3d.h"
+#include "../../incl/cub3d_bonus.h"
 
 int	is_map(char c)
 {

@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   take_cub.c                                         :+:      :+:    :+:   */
+/*   take_cub_bonus.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: tstrassb <tstrassb@student.42wolfsburg.d>  +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/07 15:00:06 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/09 13:18:42 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/29 16:20:31 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incl/cub3d.h"
+#include "../../incl/cub3d_bonus.h"
 
 static int	free_take_cub(t_files *files, t_map *map)
 {
 	(void)map;
 	ft_free(files->north, files->south, files->west, files->east);
 	ft_free(files->c, files->f, files, 0);
-	return (write_error("error: map:\nmalloc failed\n"));
+	exit(write_error("error: map:\nmalloc failed\n"));
 }
 
 /*responsible for extracting the map data from the [tab] array

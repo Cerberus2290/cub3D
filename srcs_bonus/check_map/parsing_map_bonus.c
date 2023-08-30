@@ -6,11 +6,15 @@
 /*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 10:02:05 by tstrassb          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2023/08/29 17:01:42 by aputiev          ###   ########.fr       */
+=======
+/*   Updated: 2023/08/29 16:20:45 by tstrassb         ###   ########.fr       */
+>>>>>>> 07c3aa1cded6422bcd7216a0c68d176777a86d17
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incl/cub3d.h"
+#include "../../incl/cub3d_bonus.h"
 
 /*goes through the input string until it finds '.'
  * checks if file extension ends in ".cub"*/
@@ -35,10 +39,14 @@ int	all_face(t_files *files)
 {
 	if (!files->f1 || !files->f2 || !files->f3
 		|| !files->f4 || !files->f5 || !files->f6)
+<<<<<<< HEAD
 	{
 		write_error("error: map:\nno color or direction specified\n");
 		exit(0);
 	}
+=======
+		exit(write_error("error: map file:\nmissing information\n"));
+>>>>>>> 07c3aa1cded6422bcd7216a0c68d176777a86d17
 	return (0);
 }
 

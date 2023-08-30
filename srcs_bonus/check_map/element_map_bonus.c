@@ -3,14 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   element_map_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
+<<<<<<< HEAD
 /*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/03 14:18:22 by tstrassb          #+#    #+#             */
 /*   Updated: 2023/08/29 17:21:49 by aputiev          ###   ########.fr       */
+=======
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/03 14:18:22 by tstrassb          #+#    #+#             */
+/*   Updated: 2023/08/29 16:20:50 by tstrassb         ###   ########.fr       */
+>>>>>>> 07c3aa1cded6422bcd7216a0c68d176777a86d17
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../incl/cub3d.h"
+#include "../../incl/cub3d_bonus.h"
 
 /*determines the type of elements encountered while parsing the map file*/
 int	element_type(char *str, size_t i)
@@ -74,10 +81,14 @@ int	face_map(t_files *files, char *str, size_t i)
 		return (0);
 	face = element_type(str, i);
 	if (face == 0)
+<<<<<<< HEAD
 	{
 		write_error("error: map:\nfound unrecognized element\n");
 		exit(0);
 	}
+=======
+		exit(write_error("error: map:\nfound unrecognized element\n"));
+>>>>>>> 07c3aa1cded6422bcd7216a0c68d176777a86d17
 	else if (face == 7)
 		return (2);
 	while (str[i] && str[i] != 32)

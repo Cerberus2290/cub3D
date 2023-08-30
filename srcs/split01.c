@@ -3,10 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   split01.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 14:53:14 by tstrassb          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2023/08/29 17:17:31 by aputiev          ###   ########.fr       */
+=======
+/*   Updated: 2023/08/29 14:20:19 by tstrassb         ###   ########.fr       */
+>>>>>>> 07c3aa1cded6422bcd7216a0c68d176777a86d17
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +68,7 @@ static char	**ft_create_tab(char **tab, const char *str, char c)
 	int	start;
 	int	flag;
 
-	init(&i, &count, &start, &flag);
+	init(&count, &i, &start, &flag);
 	while (str[i])
 	{
 		if (str[i] == c && flag == 0 && ++flag)

@@ -6,11 +6,11 @@
 /*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 10:15:02 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/25 16:35:39 by tstrassb         ###   ########.fr       */
+/*   Updated: 2023/08/29 16:21:21 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incl/cub3d.h"
+#include "../incl/cub3d_bonus.h"
 
 int	render_vertical_l(t_data *data, int y, int color, int i)
 {

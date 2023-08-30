@@ -6,7 +6,11 @@
 /*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 17:08:32 by tstrassb          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2023/08/29 17:23:18 by aputiev          ###   ########.fr       */
+=======
+/*   Updated: 2023/08/29 15:29:22 by tstrassb         ###   ########.fr       */
+>>>>>>> 07c3aa1cded6422bcd7216a0c68d176777a86d17
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,7 +90,7 @@ int	cpl_map_len(char **map, size_t **map_len)
 		while (map[y][x])
 		{
 			if (!(is_map(map[y][x]) || map[y][x] == 32 || map[y][x] == '\n'))
-				return (write_error("error: map:\nBad map element\n"));
+				exit(write_error("error: map:\nBad map element\n"));
 			x++;
 		}
 		(*map_len)[y] = x;
@@ -103,7 +107,7 @@ int	check_cub(t_map *map)
 
 	map_len = malloc(sizeof(size_t) * map->map_len);
 	if (!map_len)
-		return (write_error("error: map:\nNo map found\n"));
+		exit(write_error("error: map:\nNo map found\n"));
 	if (cpl_map_len(map->map, &map_len))
 	{
 		free(map_len);
@@ -117,7 +121,7 @@ int	check_cub(t_map *map)
 	if (!map->spawn)
 	{
 		free(map_len);
-		return (write_error("error: map:\nNo place to spawn\n"));
+		exit(write_error("error: map:\nNo place to spawn\n"));
 	}
 	free(map_len);
 	return (0);

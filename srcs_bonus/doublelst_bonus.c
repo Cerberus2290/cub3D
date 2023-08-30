@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   doublelst_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/02 17:15:32 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/28 15:13:23 by aputiev          ###   ########.fr       */
+/*   Updated: 2023/08/29 16:19:41 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../incl/cub3d.h"
+#include "../incl/cub3d_bonus.h"
 
 t_list	*ft_lstnew(void *cont)
 {
