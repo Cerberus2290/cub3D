@@ -83,14 +83,18 @@ The constraints are as follows:
         ```
         NO ./path_to_the_north_texture
         ```
+        
             * identifier: NO
             * path to the north texture
+      
         * South texture;
         ```
         SO ./path_to_the_south_texture
         ```
+        
             * identifier: SO
             * path to the south texture
+      
         * West texture:
         ```
         WE ./path_to_the_west_texture
