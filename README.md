@@ -27,7 +27,7 @@
     <img src="https://github.com/Cerberus2290/cub3D/assets/120580537/8e97011b-fc95-4ef5-937a-ac408d10e7f8" />
 </p>
     
-| Here is the original -->| [Wolfenstein 3D](http://users.atw.hu/wolf3d/) |
+| Here is the original --> | [Wolfenstein 3D](http://users.atw.hu/wolf3d/) |
 
 # <a name="manda">Mandatory Part</a>
 
