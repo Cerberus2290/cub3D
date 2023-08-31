@@ -24,4 +24,6 @@
 * With the help of the numerous documents available on the internet, you will use mathematics as a tool to create elegant and efficient algorithms.
 
 <p align="center">
-    <img src=""/p>
+    <img src="<img width="229" alt="Screen Shot 2023-08-31 at 12 24 04 PM" src="https://github.com/Cerberus2290/cub3D/assets/120580537/8e97011b-fc95-4ef5-937a-ac408d10e7f8">" />
+</p>
+    
