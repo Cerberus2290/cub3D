@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aputiev <aputiev@student.42.fr>            +#+  +:+       +#+        */
+/*   By: tstrassb <tstrassb@student.42>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/01 11:33:24 by tstrassb          #+#    #+#             */
-/*   Updated: 2023/08/29 17:07:57 by aputiev          ###   ########.fr       */
+/*   Updated: 2023/08/30 11:40:12 by tstrassb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,7 @@
 # define CUB3D_H
 
 //Definition - includes / standard libs
-# ifdef __APPLE__
-#  include "../mlx/mlx.h"				//mlx library
-# else
-#  include "../mlx_linux/mlx.h"
-# endif
+# include "../mlx/mlx.h"				//mlx library
 # include <math.h>						//collection of mathematical functions
 # include <stdio.h>						//printf, perror, strerror
 # include <fcntl.h>						//open
