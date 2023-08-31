@@ -156,6 +156,13 @@ The constraints are as follows:
 
 ### ⚠️ Bonuses will be evaluated only if your mandatory part is PERFECT. By PERFECT we naturally mean that it needs to be complete, that it cannot fail, even in cases of nasty mistakes like wrong uses etc. It means that if your mandatory part does not obtain ALL the points during the grading, your bonuses will be entirely IGNORED. ⚠️
 
+Bonus list:
+* Wall collisions.
+* A minimap system.
+* Doors which can open and close.
+* animated sprite.
+* Rotate the point of view with the mouse.
+
 ### 💡 You will be able to create better games later do not waste too much time! 💡
 
 ### ℹ️ You are allowed to use other functions or add symbols on the map to complete the bonus part as long as their use is justified during your evaluation. You are also allowed to modify the expected scene file format to fit your needs. Be smart! ℹ️
